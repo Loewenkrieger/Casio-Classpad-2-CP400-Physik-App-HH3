@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.codex/
+.codex-remote-attachments/
+*.zip
+*.pdf
+private/
+material/
