@@ -1,8 +1,12 @@
 # HH3-Ladeoptimierung
 
-Status: **geplant, noch nicht umgesetzt**. Dieses Repository startet mit den
-unveränderten öffentlichen App-Dateien des HH2-Releases v1.0.0. Es enthält
-zu Beginn weder den neuen HH3-Ladeweg noch die zugehörigen Entwicklungswerkzeuge.
+Status: **HH3-Testkandidat softwareseitig geprüft und am Gerät erprobt**.
+Der neue Ladeweg, ein getrennter Vergleichsbuild und selbstständige
+Regressionstests sind umgesetzt. Wissen und Bilddaten stimmen weiterhin
+bytegenau mit der öffentlichen HH2-Ausgangsbasis überein.
+Der Nutzer bestätigt die Funktion auf seinem ClassPad und berichtet subjektiv
+kürzere Bildladezeiten als beim bisherigen HH2-Build. Genaue Gerätezeiten und
+ein vollständiger Hardwaretest aller Funktionen stehen weiterhin aus.
 
 ## Ziel und Grenzen
 
@@ -16,6 +20,10 @@ zu Beginn weder den neuen HH3-Ladeweg noch die zugehörigen Entwicklungswerkzeug
 
 ## 1. Getrennten Testbuild aufbauen
 
+Umgesetzt: eingefrorene öffentliche Referenz, eigener Builder, Tests und
+PC-Simulation. Bewusst nur benötigte öffentliche Teile übernommen, nicht
+den gesamten alten Builder oder private PDF-Werkzeuge.
+
 - Benötigte öffentliche Entwicklungsquellen, Build-Werkzeuge und Regressionstests
   gezielt aus der bisherigen lokalen Entwicklung übernehmen. Keine komplette
   Workspace-Kopie und keine privaten PDF-Materialien einchecken.
@@ -27,6 +35,9 @@ zu Beginn weder den neuen HH3-Ladeweg noch die zugehörigen Entwicklungswerkzeug
   private Unterrichtsmedien zu übernehmen. Dafür wäre eine eigene Freigabe nötig.
 
 ## 2. Dateizugriff und Speicherverwaltung optimieren
+
+Umgesetzt und softwareseitig geprüft; Funktion und subjektive Beschleunigung
+sind durch die Geräteerprobung des Nutzers bestätigt.
 
 - Mit `seek()` direkt zu Datensätzen und Bilddaten springen. Auch gemeinsam
   genutzte Verzeichniszugriffe einbeziehen, damit der Bildindex nicht weiter
@@ -45,6 +56,9 @@ zu Beginn weder den neuen HH3-Ladeweg noch die zugehörigen Entwicklungswerkzeug
 
 ## 3. Auf dem ClassPad vergleichen
 
+Der Vergleich ist im Diagnosebuild implementiert. Eine positive qualitative
+Geräterückmeldung liegt vor; genaue Messwerte fehlen noch.
+
 Nur der Testbuild erhält den Menüpunkt `HH3-Bildtest`. Der bisherige und der
 optimierte Ladeweg müssen mit derselben Laufzeit und denselben Bildern
 verglichen werden.
@@ -61,7 +75,11 @@ verglichen werden.
 ## 4. Softwareprüfung und Abnahme
 
 - Die bisherigen 48 Testgruppen als Referenz erhalten und mit öffentlichen
-  Daten reproduzieren; nicht gegen frisch erzeugte Ergebnisse selbst vergleichen.
+  Daten prüfen; nicht gegen frisch erzeugte Ergebnisse selbst vergleichen.
+  Die vollständigen ursprünglichen 48 Gruppen bleiben unverändert im HH2-Projekt.
+  Im HH3-Projekt werden passende wissenschaftliche und Bedienungstests
+  übernommen und durch gezielte Tests des neuen Ladewegs ergänzt; private
+  PDF- und alte Produktionsprofil-Tests werden nicht als neue HH3-Tests ausgegeben.
 - HH3-Tests für erfolgreiche und fehlerhafte Positionierung, Ersatzweg, kurze
   Lesezugriffe, fehlende beziehungsweise beschädigte Dateien und Pufferfreigabe ergänzen.
 - Alle Bilder pixelgenau mit der Ausgangsbasis vergleichen. Sämtliche

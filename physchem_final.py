@@ -1,26 +1,48 @@
 """Physik-LK-App mit Wissen, das per Byteindex aus wissen.txt geladen wird."""
 
 from gint import *
-"""Small indexed records, loaded on demand without seek or eval."""
+"""HH3 indexed records with verified positioning and a sequential fallback."""
 
 
 def store_text(block):
-    return block if isinstance(block, str) else block.decode("ascii")
+    return block if isinstance(block, str) else str(block, "ascii")
+
+
+def fill_bytes(readinto, target):
+    view = memoryview(target)
+    position = 0
+    while position < len(view):
+        part = view[position:min(position + SKIP_BLOCK, len(view))]
+        count = readinto(part)
+        if not isinstance(count, int) or count < 0 or count > len(part):
+            raise ValueError("Ungueltige Byteanzahl beim Lesen")
+        if count == 0:
+            raise ValueError("Datendatei ist verkuerzt")
+        position += count
+
+
+def store_read(handle, length):
+    readinto = getattr(handle, "readinto", None)
+    if readinto is None:
+        raise ValueError("PythonExtra ohne bytegenaues readinto")
+    buffer = bytearray(length)
+    fill_bytes(readinto, buffer)
+    return buffer
 
 
 def skip_store(handle, remaining):
     if remaining < 0:
         raise ValueError("Ungueltige Datenposition")
-    blocks = 0
+    if not remaining:
+        return
+    buffer = memoryview(bytearray(min(SKIP_BLOCK, remaining)))
+    readinto = getattr(handle, "readinto", None)
+    if readinto is None:
+        raise ValueError("PythonExtra ohne bytegenaues readinto")
     while remaining:
-        chunk = handle.read(min(SKIP_BLOCK, remaining))
-        if not chunk:
-            raise ValueError("Datendatei ist verkuerzt")
-        remaining -= len(chunk)
-        del chunk
-        blocks += 1
-        if blocks % 16 == 0:
-            gc.collect()
+        size = min(len(buffer), remaining)
+        fill_bytes(readinto, buffer[:size])
+        remaining -= size
 
 
 def open_store(kind):
@@ -31,13 +53,38 @@ def open_store(kind):
         except OSError:
             continue
         try:
-            if store_text(handle.read(len(STORE_HEADERS[kind]))) != STORE_HEADERS[kind]:
+            if store_text(store_read(handle, len(STORE_HEADERS[kind]))) != STORE_HEADERS[kind]:
                 raise ValueError(filename + " passt nicht zu dieser App")
         except Exception:
             handle.close()
             raise
         return handle
     raise OSError(filename + " fehlt neben der App")
+
+
+def positioned_store(kind, start):
+    if not isinstance(start, int) or start < len(STORE_HEADERS[kind]):
+        raise ValueError("Ungueltige Datenposition")
+    handle = open_store(kind)
+    try:
+        try:
+            handle.seek(start, 0)
+            if handle.tell() == start:
+                return handle
+        except (AttributeError, OSError, TypeError, ValueError, OverflowError):
+            pass
+    except Exception:
+        handle.close()
+        raise
+    # A failed seek may have moved the cursor. Restart from a verified header.
+    handle.close()
+    handle = open_store(kind)
+    try:
+        skip_store(handle, start - len(STORE_HEADERS[kind]))
+        return handle
+    except Exception:
+        handle.close()
+        raise
 
 
 def record_value(text, position=0, depth=0):
@@ -83,19 +130,10 @@ class DiskTable:
         return self.count
 
     def open_rows(self, start):
-        handle = open_store(self.kind)
-        try:
-            skip_store(handle, self.start + start * self.width - len(STORE_HEADERS[self.kind]))
-        except Exception:
-            handle.close()
-            raise
-        return handle
+        return positioned_store(self.kind, self.start + start * self.width)
 
     def read_one(self, handle):
-        block = handle.read(self.width)
-        if len(block) != self.width:
-            raise ValueError("Datensatz fehlt oder ist verkuerzt")
-        return decode_record(block)
+        return decode_record(store_read(handle, self.width))
 
     def __getitem__(self, index):
         if index < 0:
@@ -175,10 +213,9 @@ class DiskMap:
 
 def load_chapter(chapter_id):
     start, length = CHAPTERS[chapter_id]
-    handle = open_store(0)
+    handle = positioned_store(0, start)
     try:
-        skip_store(handle, start - len(STORE_HEADERS[0]))
-        data = handle.read(length)
+        data = store_read(handle, length)
     finally:
         handle.close()
     if len(data) != length:
@@ -211,7 +248,7 @@ DIM = C_RGB(10, 14, 10)
 ACCENT = C_RGB(4, 18, 12)
 SELECTED = C_RGB(20, 26, 20)
 
-SKIP_BLOCK = 512
+SKIP_BLOCK = 4096
 PI = 3.141592653589793
 
 
@@ -1095,25 +1132,22 @@ def run_fit(calc):
         body = "Fehler: " + str(error)
     show_text("Planck-Messreihe", body)
 
-"""Embedded static-media viewer; no seek, image cache or PNG/JPEG decoder."""
+"""HH3 media viewer; one image buffer, unchanged RGB565 drawing."""
 MEDIA_STAGE = "Start"
-MEDIA_RAM = -1
 
 
 def media_stage(label):
-    global MEDIA_STAGE, MEDIA_RAM
+    global MEDIA_STAGE
     MEDIA_STAGE = label
-    MEDIA_RAM = memory_free()
 
 
 def media_error(error, ident):
     after = memory_free()
     body = "Bild: " + ident + "\nFehler: " + type(error).__name__
     body += "\nSchritt: " + MEDIA_STAGE
-    body += "\nRAM vor Schritt: " + str(MEDIA_RAM) + " B"
-    body += "\nRAM nach Fehler: " + str(after) + " B"
+    body += "\nRAM bei Fehler: " + str(after) + " B"
     body += "\nDetails: " + (str(error) or "keine Zusatzmeldung")
-    if MEDIA_RAM < 0 or after < 0: body += "\nRAM -1: nicht verfuegbar."
+    if after < 0: body += "\nRAM -1: nicht verfuegbar."
     return body + "\nTheorie und Rechner bleiben nutzbar."
 
 
@@ -1125,57 +1159,21 @@ def sibling_paths(filename):
 
 
 def fill_media(readinto, target):
-    # Bypass text decoding, including ports that ignore the rb mode.
-    view = memoryview(target)
-    position = 0
-    while position < len(view):
-        part = view[position:min(position + SKIP_BLOCK, len(view))]
-        count = readinto(part)
-        if not isinstance(count, int) or count < 0 or count > len(part):
-            raise ValueError("Ungueltige Byteanzahl beim Lesen")
-        if count == 0: raise ValueError("bilder.dat ist verkuerzt")
-        position += count
+    fill_bytes(readinto, target)
 
 
 def read_media(ident):
     media_stage("Bildverzeichnis")
     row = MEDIA_INDEX[ident]
     start, length = row[2], row[3]
-    handle = None
-    media_stage("Datei oeffnen")
-    for path in sibling_paths("bilder.dat"):
-        try:
-            handle = open(path, "rb")
-            break
-        except OSError:
-            pass
-    if handle is None: raise OSError("bilder.dat fehlt neben der App")
+    media_stage("Bildposition suchen")
+    handle = positioned_store(1, start)
     try:
-        media_stage("Paketkennung pruefen")
-        readinto = getattr(handle, "readinto", None)
-        if readinto is None: raise ValueError("PythonExtra ohne bytegenaues readinto")
-        header = bytearray(len(MEDIA_HEADER))
-        fill_media(readinto, header)
-        if header != MEDIA_HEADER:
-            raise ValueError("bilder.dat passt nicht zu dieser App")
-        del header
-        media_stage("Bildposition suchen")
-        remaining = start - len(MEDIA_HEADER)
-        if remaining < 0: raise ValueError("Ungueltige Bildposition")
-        skip = memoryview(bytearray(SKIP_BLOCK))
-        blocks = 0
-        while remaining:
-            size = min(SKIP_BLOCK, remaining)
-            fill_media(readinto, skip[:size])
-            remaining -= size
-            blocks += 1
-            if blocks % 16 == 0: gc.collect()
-        del skip
-        gc.collect()
         media_stage("Bildpuffer anlegen")
+        gc.collect()
         buffer = bytearray(length)
         media_stage("Bilddaten lesen")
-        fill_media(readinto, buffer)
+        fill_media(handle.readinto, buffer)
         media_stage("Pruefsumme pruefen")
         if sum(buffer) % 65536 != row[6]: raise ValueError("Abbildung beschaedigt")
         return buffer
@@ -1279,7 +1277,6 @@ def show_media(ids):
                     direction = -1 if event.x < 110 else 1
             if direction:
                 index = (index + direction) % len(ids)
-                gc.collect()
                 dirty = True
         time.sleep(0.01)
 
