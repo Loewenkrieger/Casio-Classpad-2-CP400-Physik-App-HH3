@@ -1,6 +1,6 @@
 # HH3-Ladeoptimierung
 
-Status: **HH3-Testkandidat softwareseitig geprüft und am Gerät erprobt**.
+Status: **HH3-Release v1.0.0, softwareseitig geprüft und am Gerät erprobt**.
 Der neue Ladeweg, ein getrennter Vergleichsbuild und selbstständige
 Regressionstests sind umgesetzt. Wissen und Bilddaten stimmen weiterhin
 bytegenau mit der öffentlichen HH2-Ausgangsbasis überein.
@@ -89,12 +89,18 @@ verglichen werden.
 - Keine konkrete Beschleunigung vor dem Gerätetest zusagen. Bei verbleibenden
   Engpässen anhand der getrennten Messwerte weiterarbeiten.
 
-## 5. Spätere Veröffentlichung
+## 5. Veröffentlichung v1.0.0
 
-Erst nach bestätigtem Gerätetest und gesonderter Freigabe einen HH3-Release
-vorbereiten. Eine Veröffentlichung bedeutet nicht automatisch, dieses
-private Repository öffentlich zu machen. Die Sichtbarkeit bleibt privat,
-bis ausdrücklich etwas anderes vereinbart wird.
+Der Nutzer hat nach erfolgreicher Geräteerprobung die Veröffentlichung
+des aktuellen PythonExtra-Stands ohne Grafiktests in der App freigegeben.
+Der Produktionsbuild enthält ausschließlich die fünf regulären Menüpunkte;
+Diagnosefunktionen, Vergleichsladewege und Testbilder sind nicht enthalten.
+Die Software-Tests bleiben als separate Entwicklungswerkzeuge erhalten.
+
+Die ClassPad- und PC-Pakete werden mit Manifest und SHA256-Prüfsummen
+bereitgestellt. Das Repository bleibt privat; der HH2-Release bleibt unverändert.
+Genaue Gerätezeiten und ein vollständiger Hardwaretest stehen weiterhin aus.
+Eine native C-/C++-Portierung ist nicht Bestandteil dieses Releases.
 
 ## Technische Quellen
 

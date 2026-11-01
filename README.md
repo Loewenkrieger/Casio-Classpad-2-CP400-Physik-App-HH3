@@ -4,16 +4,25 @@ Die eigenständige HH3-Projektlinie der Physik-Lernapp für den ClassPad II.
 Der Fokus liegt auf **Hollyhock 3**, **PythonExtra.hh3** und einem daran
 angepassten Ladeweg für Wissen und Abbildungen.
 
-> [!WARNING]
-> **HH3-Testkandidat mit bestätigter Geräteerprobung.** Der Ladeweg ist jetzt auf
-> verifizierte Direktpositionierung und größere Leseblöcke umgestellt.
-> Laufende RAM-Abfragen und häufige Bereinigungen wurden reduziert.
-> Wissen und Bilddaten bleiben unverändert. Der Nutzer bestätigt die Funktion
-> auf seinem ClassPad und berichtet subjektiv kürzere Bildladezeiten als beim
-> bisherigen HH2-Build. Genaue Gerätezeiten und ein vollständiger Hardwaretest
-> liegen noch nicht vor. Kein stabiler HH3-Release.
+> [!NOTE]
+> **HH3-Release v1.0.0.** Die App enthält keine Grafiktests, Vergleichsladewege
+> oder Diagnosemenüs. Der optimierte Ladeweg und alle fachlichen Abbildungen
+> bleiben erhalten. Die Funktion wurde vom Nutzer am ClassPad bestätigt;
+> genaue Ladezeiten und ein vollständiger Hardwaretest aller Funktionen
+> liegen noch nicht vor. PythonExtra wird weiterhin benötigt.
 
-## Funktionen der Ausgangsbasis
+## Downloads
+
+| Paket | Verwendung |
+| --- | --- |
+| [ClassPad v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/download/v1.0.0/physik_hh3_classpad_v1_0_0.zip) | Genau drei App-Dateien für Hollyhock 3 / PythonExtra.hh3 |
+| [PC-Vorschau v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/download/v1.0.0/physik_hh3_pc_v1_0_0.zip) | Gleiche App mit Grafiksimulation und Startdatei für Windows |
+| [Prüfsummen](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/download/v1.0.0/SHA256SUMS.txt) | SHA256 der ZIPs und des Paketmanifests |
+
+Alle Downloads stehen im [HH3-Release v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v1.0.0).
+Das Repository bleibt privat; für den Download ist ein berechtigtes GitHub-Konto nötig.
+
+## Funktionen
 
 - **146 Theorieartikel**, **368 eindeutige Formeln** und **514 Wissenskapitel**.
 - **167 Rechner- und Messreihenfunktionen** mit passenden Einheiten.
@@ -74,10 +83,11 @@ Die [PythonExtra-Installationsanleitung](https://classpaddev.github.io/wiki/pyth
 erläutert die Zuordnung der Laufzeiten. Für dieses Projekt ist `.hh3`
 vorgesehen, nicht die HH2-Datei `PythonExtra-hh2.bin`.
 
-## 2. Entwicklungsstand auf dem Gerät testen
+## 2. App auf dem ClassPad installieren
 
-1. Verwende die drei zusammengehörigen App-Dateien aus diesem Repository.
-2. Lege sie gemeinsam in einen Ordner wie `physik_hh3` auf dem ClassPad.
+1. Lade das **ClassPad-ZIP** aus dem HH3-Release herunter und entpacke es.
+2. Kopiere `physchem_final.py`, `wissen.txt` und `bilder.dat` gemeinsam in
+   einen Ordner wie `physik_hh3` auf dem ClassPad. Vorhandene drei Dateien zusammen ersetzen.
 3. Wirf das Gerät sicher aus und starte PythonExtra neu.
 4. Wähle `physchem_final.py` in der Dateiliste aus.
 
@@ -87,49 +97,28 @@ vorgesehen, nicht die HH2-Datei `PythonExtra-hh2.bin`.
 > Starte die App deshalb nicht direkt daraus. Unterstriche wie in
 > `physik_hh3` sind geeignet. Alle drei Dateien immer gemeinsam austauschen.
 
-Es gibt noch keinen veröffentlichten HH3-Release. Lokale Test-ZIPs und eine
-PC-Vorschau lassen sich mit dem mitgelieferten Builder erzeugen.
-README, Roadmap, Tests und Git-Dateien gehören nicht auf den Taschenrechner.
+Verwende für die Installation das ClassPad-ZIP, nicht das komplette
+Quellcode-Archiv von GitHub. README, Roadmap, Tests und Build-Werkzeuge
+gehören nicht auf den Taschenrechner.
 
-## 3. Testpakete und PC-Vorschau
+## 3. PC-Vorschau
 
-Mit Python 3 im Projektordner:
+1. Installiere Python 3 mit Tkinter auf deinem PC.
+2. Lade das **PC-ZIP** aus demselben HH3-Release herunter und entpacke es.
+3. Starte unter Windows `start_pc_preview.bat`.
 
-```text
-py -3 tools/build_hh3.py --diagnostics
-```
-
-Die Ausgabe liegt unter `testbuild/hh3_preview`:
-
-- `physik_hh3_test.zip`: drei App-Dateien mit zusätzlichem `HH3-Bildtest`.
-- `physik_hh3_pc_test.zip`: dieselbe Vergleichsversion mit PC-Grafiksimulation.
-- `pc-preview/start_pc_preview.bat`: PC-Vorschau mit installiertem Python 3 und Tkinter.
-
-Der Vergleichsbuild enthält den eingefrorenen ursprünglichen Ladeweg und
-den optimierten HH3-Ladeweg. Unter `HH3-Bildtest` zuerst `Ladewege vergleichen`
-ausführen und die drei Ergebnisseiten notieren oder fotografieren.
-Anschließend `20 Bildwechsel` ausführen und auf vollständige Bilder achten.
-DEL kann den Vergleich nach dem aktuellen Bild abbrechen.
-
-Die Vergleichsmessung zeigt ersten Aufruf und Median aus drei Durchläufen
-pro Bild und Ladeweg. Aufschlüsselung: Index, Datei/Header, Positionierung,
-Puffer, Lesen, Prüfsumme, Zeichnen, Anzeige, GC und RAM-Diagnose. Der alte
-Ladeweg enthält absichtlich seine bisherigen RAM-Abfragen; die Diagnose
-fügt beim optimierten Weg keine solchen Abfragen hinzu.
-
-Die Python-Datei im Projektstamm ist der schlanke HH3-Kandidat ohne
-Diagnosemenü. Für einen separaten Build ohne Vergleichscode:
+Alternativ im entpackten PC-Ordner:
 
 ```text
-py -3 tools/build_hh3.py --output-dir testbuild/hh3_app
+py -3 physchem_final.py
 ```
 
-In beiden Fällen gilt: alle drei Dateien gemeinsam übertragen und PythonExtra
-neu starten. `gint.py` aus der PC-Vorschau bleibt ausschließlich auf dem PC.
+Die PC-Vorschau enthält dieselbe App ohne Grafiktest-Menü. `gint.py` simuliert
+die Grafikfunktionen ausschließlich am PC und gehört nicht auf den ClassPad.
 
 ## Bedienung
 
-Das Hauptmenü der übernommenen App enthält:
+Das Hauptmenü enthält ausschließlich:
 
 - Theorie
 - Formeln nach Groessen
@@ -142,11 +131,11 @@ Zurück führt zur vorherigen Ansicht. In Artikeln mit Bildern öffnet
 `Abbildungen (EXE)` oder die EXE-Taste den Betrachter. Links/rechts wechselt
 die Darstellung; Zurück stellt die bisherige Textposition wieder her.
 
-## Bekanntes Leistungsproblem
+## HH3-Ladeoptimierung
 
 Die HH2-Ausgangsbasis liest auf dem Weg zum Bild viele kleine Dateiblöcke,
 führt häufig Speicherbereinigungen durch und fragt während der Bilddiagnose
-mehrfach den freien RAM ab. Der HH3-Kandidat springt nach bestätigtem
+mehrfach den freien RAM ab. Die HH3-Version springt nach bestätigtem
 `seek()`/`tell()` direkt zur Position und liest mit `readinto()` bis zu 4 KiB
 pro Aufruf. Bei unbrauchbarer Positionierung wird die Datei neu geöffnet
 und kontrolliert sequenziell gelesen.
@@ -161,7 +150,7 @@ Messungen unter derselben HH3-Laufzeit bereit.
 
 Am PC gezählte Vorgänge bei einem kalten Bildindex, keine Gerätezeiten:
 
-| Beugungsringe | Ursprünglich | HH3-Kandidat |
+| Beugungsringe | Ursprünglich | HH3-Version |
 | --- | --- | --- |
 | Leseaufrufe insgesamt | 622 | 63 |
 | Erzwungene Bereinigungen | 26 | 2 |
@@ -176,12 +165,12 @@ Ausgangspunkt ist ausschließlich die öffentliche App aus dem
 [HH2-Release v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App/releases/tag/v1.0.0).
 Wissen, Rechner und Bilddaten bleiben unverändert. Eine eingefrorene
 Referenzdatei und feste SHA256-Werte sichern den Vergleich gegen den
-öffentlichen Ausgangsstand; die Tests vergleichen nicht den Kandidaten mit sich selbst.
+öffentlichen Ausgangsstand; die Tests vergleichen nicht die neue Version mit sich selbst.
 
 Der optimierte HH3-Build wurde auf dem ClassPad des Nutzers erfolgreich
 erprobt; die Rückmeldung bestätigt eine subjektive Beschleunigung gegenüber
 dem bisherigen HH2-Build. Das ist **kein vollständiger HH3-Hardwaretest**
-aller Funktionen und keine quantifizierte Leistungsmessung. Die 31 neuen
+aller Funktionen und keine quantifizierte Leistungsmessung. Die 35
 Software-Testgruppen prüfen unter anderem
 alle 514 Kapitel, die Rechnerregressionen, 39 pixelgleiche Bildansichten,
 kurze Lesezugriffe, defekte Dateien, eingeschränkte Bytearray-APIs,
@@ -189,15 +178,34 @@ Ersatzwege und die Rückkehr aus der Bildansicht. Beide PC-Varianten wurden
 zusätzlich mit jeweils 20 vollständig gezeichneten Bildwechseln und dem
 Beenden-Menü geprüft. Die ursprünglichen 48 HH2-Referenztestgruppen wurden
 separat erneut ausgeführt; sie werden nicht als neue HH3-Gerätetests ausgegeben.
+Vier zusätzliche Release-Prüfungen sichern unter anderem die Abwesenheit
+von eingebautem Diagnosecode, ZIP-Inhalte, Versionstrennung und Prüfsummen.
+
+## Entwicklung und Tests
+
+Die Entwicklungswerkzeuge bleiben im Quellcode-Repository, werden aber
+**nicht in die Release-ZIPs oder die App eingebaut**. Der Produktionsbuild:
+
+```text
+py -3 tools/build_hh3.py --release 1.0.0
+```
+
+Die Ausgabe liegt getrennt unter `release-ready/v1_0_0`. Der Build lehnt
+Diagnosecode und zusätzliche Paketdateien ab. Wissen und Bilder werden
+bytegenau gegen die eingefrorene öffentliche Ausgangsbasis geprüft.
 
 Tests ausführen (für Bildvergleiche wird Pillow benötigt):
 
 ```text
 py -3 tools/run_tests.py
 py -3 tools/check_preview.py
+py -3 tools/check_preview.py --app release-ready/v1_0_0/pc-preview/physchem_final.py
 ```
 
 Testberichte und Bildvergleiche bleiben unter `testbuild/hh3_preview`.
+Optional kann für die Entwicklung weiterhin ein getrenntes Diagnosepaket
+mit `py -3 tools/build_hh3.py --diagnostics` erzeugt werden. Nur dieses erhält
+`HH3-Bildtest`, Vergleichsladewege und Messanzeigen; der Release enthält sie nicht.
 
 Gemeldete HH3-PythonExtra-Version:
 
@@ -217,7 +225,8 @@ werden hier nicht als neue HH3-Releases übernommen.
 - Private PDF-Ausschnitte, Unterrichtsmaterialien, alte ZIPs und lokale Backups
   wurden nicht übernommen. Das Medienpaket enthält nur die 39 eigenen Abbildungen.
 - Weitere Geräteprüfungen betreffen genaue Ladezeiten und die vollständige
-  Funktionsabdeckung. Ein fertiger HH3-Release benötigt eine gesonderte Freigabe.
+  Funktionsabdeckung. Die Veröffentlichung erweitert den bestätigten
+  Hardware-Prüfumfang nicht automatisch.
 - Dieses Community-Projekt ist nicht mit Casio verbunden. Schul- und
   Prüfungsregeln beachten; keine Zusicherung für den Prüfungsmodus.
 - Installationsquellen zuletzt am **28. Oktober 2026** geprüft.

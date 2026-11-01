@@ -1,9 +1,10 @@
-"""Package the HH3 candidate without rebuilding the frozen knowledge/media."""
+"""Package HH3 production or diagnostic builds with frozen knowledge/media."""
 import argparse
 import ast
 import hashlib
 import json
 from pathlib import Path
+import re
 import shutil
 import zipfile
 
@@ -14,6 +15,27 @@ BASELINE = ROOT / "tests" / "fixtures" / "hh2_v1.py"
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def production_source(source):
+    tree = ast.parse(source)
+    prefixes = ("hh3_", "legacy_", "probe_", "test_", "debug_")
+    labels = ("hh3-bildtest", "hh3-test", "grafiktest", "ram-test",
+              "ladewege vergleichen", "20 bildwechsel")
+    for node in ast.walk(tree):
+        name = None
+        if isinstance(node, ast.Name):
+            name = node.id
+        elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef, ast.alias)):
+            name = node.name
+        if name and name.lower().startswith(prefixes):
+            raise ValueError("Diagnostic code in production source: " + name)
+        if isinstance(node, ast.Constant) and isinstance(node.value, str):
+            if any(label in node.value.lower() for label in labels):
+                raise ValueError("Diagnostic text in production source")
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
+            if node.func.id in ("eval", "exec", "compile"):
+                raise ValueError("Dynamic code in production source")
 
 
 def diagnostic_source(source):
@@ -98,28 +120,38 @@ def diagnostic_source(source):
     return result
 
 
-def build(output=None, diagnostics=False):
-    output = Path(output or ROOT / "testbuild" / "hh3_preview").resolve()
-    allowed = (ROOT / "testbuild").resolve()
+def build(output=None, diagnostics=False, version=None):
+    if version is not None:
+        if not isinstance(version, str) or not re.fullmatch(r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)", version):
+            raise ValueError("Release version must be MAJOR.MINOR.PATCH")
+        if diagnostics:
+            raise ValueError("Production releases cannot include diagnostics")
+    allowed = (ROOT / ("release-ready" if version is not None else "testbuild")).resolve()
+    suffix = "v" + version.replace(".", "_") if version is not None else "hh3_preview"
+    output = Path(output or allowed / suffix).resolve()
     if output == allowed or allowed not in output.parents:
-        raise ValueError("Output must be a subfolder of this project's testbuild directory")
+        raise ValueError("Output must be a subfolder of " + str(allowed))
     baseline = json.loads((ROOT / "tests" / "baseline.json").read_text(encoding="ascii"))
     for name in ("wissen.txt", "bilder.dat"):
         if digest(ROOT / name) != baseline["files"][name]:
             raise ValueError("Frozen data changed: " + name)
     manifest_path = output / "manifest.json"
-    if manifest_path.exists() and json.loads(manifest_path.read_text())['diagnostics'] != diagnostics:
-        raise ValueError("Keep normal and diagnostic builds in separate output directories")
+    if manifest_path.exists():
+        previous = json.loads(manifest_path.read_text())
+        if previous['diagnostics'] != diagnostics or previous.get("version") != version:
+            raise ValueError("Keep build profiles and versions in separate output directories")
     code = (ROOT / "physchem_final.py").read_text(encoding="ascii")
     if diagnostics:
         code = diagnostic_source(code)
+    if version is not None:
+        production_source(code)
     compile(code, "physchem_final.py", "exec")
     for folder in (output / "classpad", output / "pc-preview"):
         allowed_names = set(DEVICE_FILES)
         if folder.name == "pc-preview":
             allowed_names.update(("gint.py", "README.md", "start_pc_preview.bat"))
         if folder.exists():
-            unknown = {p.name for p in folder.iterdir() if p.is_file()} - allowed_names
+            unknown = {p.name for p in folder.iterdir()} - allowed_names
             if unknown:
                 raise ValueError("Unexpected package files: " + repr(sorted(unknown)))
         folder.mkdir(parents=True, exist_ok=True)
@@ -130,8 +162,10 @@ def build(output=None, diagnostics=False):
     shutil.copyfile(ROOT / "tools" / "gint.py", pc / "gint.py")
     shutil.copyfile(ROOT / "README.md", pc / "README.md")
     (pc / "start_pc_preview.bat").write_text('@echo off\ncd /d "%~dp0"\npy -3 physchem_final.py\nif errorlevel 1 pause\n', encoding="ascii")
-    for folder, name in ((output / "classpad", "physik_hh3_test.zip"),
-                         (pc, "physik_hh3_pc_test.zip")):
+    archives = ((output / "classpad", "physik_hh3_classpad_" + suffix + ".zip"),
+                (pc, "physik_hh3_pc_" + suffix + ".zip")) if version is not None else (
+                    (output / "classpad", "physik_hh3_test.zip"), (pc, "physik_hh3_pc_test.zip"))
+    for folder, name in archives:
         with zipfile.ZipFile(output / name, "w", zipfile.ZIP_DEFLATED) as archive:
             names = DEVICE_FILES if folder.name == "classpad" else DEVICE_FILES + ("gint.py", "README.md", "start_pc_preview.bat")
             for entry in sorted(names):
@@ -139,7 +173,14 @@ def build(output=None, diagnostics=False):
     manifest = dict(runtime="Hollyhock 3 / PythonExtra.hh3", diagnostics=diagnostics,
                     hardware_tested=False, baseline_commit=baseline["commit"],
                     files={name: digest(output / "classpad" / name) for name in DEVICE_FILES})
+    if version is not None:
+        manifest.update(profile="production", version=version,
+                        device_feedback="User confirmed operation and subjectively faster image loading; no complete hardware test or measured speedup.")
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="ascii")
+    if version is not None:
+        assets = [name for _, name in archives] + ["manifest.json"]
+        (output / "SHA256SUMS.txt").write_text(
+            "".join(digest(output / name) + "  " + name + "\n" for name in assets), encoding="ascii")
     return output
 
 
@@ -147,5 +188,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--diagnostics", action="store_true")
     parser.add_argument("--output-dir", type=Path)
+    parser.add_argument("--release", metavar="VERSION", help="Build production ZIPs without diagnostic code")
     args = parser.parse_args()
-    print(build(args.output_dir, args.diagnostics))
+    print(build(args.output_dir, args.diagnostics, args.release))
