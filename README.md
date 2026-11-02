@@ -5,11 +5,10 @@ Der Fokus liegt auf **Hollyhock 3**, **PythonExtra.hh3** und einem daran
 angepassten Ladeweg für Wissen und Abbildungen.
 
 > [!NOTE]
-> **HH3-Release v1.0.0.** Die App enthält keine Grafiktests, Vergleichsladewege
-> oder Diagnosemenüs. Der optimierte Ladeweg und alle fachlichen Abbildungen
-> bleiben erhalten. Die Funktion wurde vom Nutzer am ClassPad bestätigt;
-> genaue Ladezeiten und ein vollständiger Hardwaretest aller Funktionen
-> liegen noch nicht vor. PythonExtra wird weiterhin benötigt.
+> Die App ist für **Hollyhock 3 mit PythonExtra.hh3** vorgesehen.
+> Für Hollyhock 2 steht die separate
+> [HH2-Version](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App)
+> zur Verfügung.
 
 ## Downloads
 
@@ -20,31 +19,26 @@ angepassten Ladeweg für Wissen und Abbildungen.
 | [Prüfsummen](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/download/v1.0.0/SHA256SUMS.txt) | SHA256 der ZIPs und des Paketmanifests |
 
 Alle Downloads stehen im [HH3-Release v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v1.0.0).
-Das Repository bleibt privat; für den Download ist ein berechtigtes GitHub-Konto nötig.
 
 ## Funktionen
 
 - **146 Theorieartikel**, **368 eindeutige Formeln** und **514 Wissenskapitel**.
 - **167 Rechner- und Messreihenfunktionen** mit passenden Einheiten.
 - Mechanik, Schwingungen, Elektrizität und Wechselstrom sowie Quanten- und Atomphysik.
-- **39 eigene fachliche Abbildungen** im übernommenen öffentlichen Medienpaket.
+- **39 fachliche Abbildungen** als Skizzen und Rasterbilder.
 - Wissen und Bilder werden nach Bedarf geladen.
 
-Der fachliche Umfang bleibt erhalten. Die Optimierung betrifft
-Ladegeschwindigkeit und Speicherverwaltung, nicht Bildqualität
-oder Formelinhalte. Arbeitsstand und weitere Prüfungen stehen in [ROADMAP.md](ROADMAP.md).
+Die HH3-Version bietet optimierte Dateizugriffe und Speicherverwaltung.
+Weitere technische Informationen stehen in [ROADMAP.md](ROADMAP.md).
 
 ## Voraussetzungen
 
 - Ein ClassPad II mit funktionierendem Hollyhock 3.
 - Die dazu passende PythonExtra-Datei **`PythonExtra.hh3`**.
-- Zugriff auf dieses private Repository.
 
 Hollyhock und PythonExtra werden nicht mit dieser App mitgeliefert.
-Diese Projektlinie strebt keine gemeinsame HH2-/HH3-Laufzeitfreigabe an.
-Der bisherige HH2-Stand bleibt im
-[öffentlichen Ursprungsprojekt](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App)
-erhalten.
+Die HH2- und HH3-Pakete sind für ihre jeweilige Laufzeit vorgesehen und
+sollten nicht untereinander ausgetauscht werden.
 
 ## Benötigte App-Dateien
 
@@ -113,7 +107,7 @@ Alternativ im entpackten PC-Ordner:
 py -3 physchem_final.py
 ```
 
-Die PC-Vorschau enthält dieselbe App ohne Grafiktest-Menü. `gint.py` simuliert
+Die PC-Vorschau enthält dieselbe App. `gint.py` simuliert
 die Grafikfunktionen ausschließlich am PC und gehört nicht auf den ClassPad.
 
 ## Bedienung
@@ -133,53 +127,34 @@ die Darstellung; Zurück stellt die bisherige Textposition wieder her.
 
 ## HH3-Ladeoptimierung
 
-Die HH2-Ausgangsbasis liest auf dem Weg zum Bild viele kleine Dateiblöcke,
-führt häufig Speicherbereinigungen durch und fragt während der Bilddiagnose
-mehrfach den freien RAM ab. Die HH3-Version springt nach bestätigtem
+Die HH3-Version springt nach bestätigtem
 `seek()`/`tell()` direkt zur Position und liest mit `readinto()` bis zu 4 KiB
 pro Aufruf. Bei unbrauchbarer Positionierung wird die Datei neu geöffnet
 und kontrolliert sequenziell gelesen.
 
-Die unveränderte HH2-Ausgangsbasis zeigte unter dem gemeldeten HH3-Build
-stark verlängerte Bildladezeiten. Nach der Optimierung bestätigt der Nutzer
-die Funktion am Gerät und berichtet sogar eine subjektiv schnellere
-Bildanzeige als beim bisherigen HH2-Build. Getrennte Gerätezeiten für die
-einzelnen Ladeschritte und ein gemessener Beschleunigungsfaktor liegen noch
-nicht vor. Der Vergleichsbuild stellt beide Ladewege für reproduzierbare
-Messungen unter derselben HH3-Laufzeit bereit.
+Bei erfolgreichen Bildaufrufen entfallen laufende RAM-Abfragen; erzwungene
+Speicherbereinigungen erfolgen gezielt vor und nach dem Bildpuffer.
+Paketkennungen und Prüfsummen erkennen unpassende oder beschädigte Daten.
+Es wird jeweils nur eine Abbildung geladen.
 
-Am PC gezählte Vorgänge bei einem kalten Bildindex, keine Gerätezeiten:
+## Kompatibilität und Prüfstatus
 
-| Beugungsringe | Ursprünglich | HH3-Version |
-| --- | --- | --- |
-| Leseaufrufe insgesamt | 622 | 63 |
-| Erzwungene Bereinigungen | 26 | 2 |
-| Laufende RAM-Abfragen | 14 | 0 |
+Am ClassPad erprobte PythonExtra-Laufzeit:
 
-Die Bilddaten, RGB565-Paletten und vollständigen 128-Zeilen-Zeichenabschnitte
-wurden nicht verändert. Paketprüfung und Prüfsummen bleiben aktiv.
+```text
+MicroPython v1.25.0-preview.602.gfca9b039f on 2026-02-17
+sh7305 with sh-4a
+```
 
-## Prüfstatus und Herkunft
+Ein vollständiger Hardwaretest aller Funktionen und aller HH3-/PythonExtra-Versionen
+liegt nicht vor. Geräte-Ladezeiten und Speicherverbrauch wurden nicht
+standardisiert vermessen. PC-Tests ersetzen keine Prüfung am Taschenrechner.
 
-Ausgangspunkt ist ausschließlich die öffentliche App aus dem
-[HH2-Release v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App/releases/tag/v1.0.0).
-Wissen, Rechner und Bilddaten bleiben unverändert. Eine eingefrorene
-Referenzdatei und feste SHA256-Werte sichern den Vergleich gegen den
-öffentlichen Ausgangsstand; die Tests vergleichen nicht die neue Version mit sich selbst.
-
-Der optimierte HH3-Build wurde auf dem ClassPad des Nutzers erfolgreich
-erprobt; die Rückmeldung bestätigt eine subjektive Beschleunigung gegenüber
-dem bisherigen HH2-Build. Das ist **kein vollständiger HH3-Hardwaretest**
-aller Funktionen und keine quantifizierte Leistungsmessung. Die 35
-Software-Testgruppen prüfen unter anderem
-alle 514 Kapitel, die Rechnerregressionen, 39 pixelgleiche Bildansichten,
-kurze Lesezugriffe, defekte Dateien, eingeschränkte Bytearray-APIs,
-Ersatzwege und die Rückkehr aus der Bildansicht. Beide PC-Varianten wurden
-zusätzlich mit jeweils 20 vollständig gezeichneten Bildwechseln und dem
-Beenden-Menü geprüft. Die ursprünglichen 48 HH2-Referenztestgruppen wurden
-separat erneut ausgeführt; sie werden nicht als neue HH3-Gerätetests ausgegeben.
-Vier zusätzliche Release-Prüfungen sichern unter anderem die Abwesenheit
-von eingebautem Diagnosecode, ZIP-Inhalte, Versionstrennung und Prüfsummen.
+Die Softwareprüfung umfasst **35 Testgruppen** für Wissenskapitel,
+Rechnerfunktionen, Bilddarstellung, Navigation, fehlerhafte Dateien und
+Release-Pakete. Alle 39 Abbildungen werden pixelgenau mit der Referenz
+verglichen; die PC-Vorschau wird zusätzlich mit wiederholten Bildwechseln
+und dem Beenden-Menü geprüft.
 
 ## Entwicklung und Tests
 
@@ -207,26 +182,9 @@ Optional kann für die Entwicklung weiterhin ein getrenntes Diagnosepaket
 mit `py -3 tools/build_hh3.py --diagnostics` erzeugt werden. Nur dieses erhält
 `HH3-Bildtest`, Vergleichsladewege und Messanzeigen; der Release enthält sie nicht.
 
-Gemeldete HH3-PythonExtra-Version:
-
-```text
-MicroPython v1.25.0-preview.602.gfca9b039f on 2026-02-17
-sh7305 with sh-4a
-```
-
-Dieses Repository beginnt mit einer eigenen Git-Historie. Die Herkunft
-bleibt über das öffentliche HH2-Projekt dokumentiert; dessen Release-Tags
-werden hier nicht als neue HH3-Releases übernommen.
-
 ## Hinweise
 
-- Dieses Repository ist privat. Es enthält den optimierten HH3-Code,
-  Testwerkzeuge und ausschließlich Daten aus dem bisherigen öffentlichen App-Stand.
-- Private PDF-Ausschnitte, Unterrichtsmaterialien, alte ZIPs und lokale Backups
-  wurden nicht übernommen. Das Medienpaket enthält nur die 39 eigenen Abbildungen.
-- Weitere Geräteprüfungen betreffen genaue Ladezeiten und die vollständige
-  Funktionsabdeckung. Die Veröffentlichung erweitert den bestätigten
-  Hardware-Prüfumfang nicht automatisch.
+- Die HH3-Version ist eine Weiterentwicklung der
+  [HH2-App](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App).
 - Dieses Community-Projekt ist nicht mit Casio verbunden. Schul- und
   Prüfungsregeln beachten; keine Zusicherung für den Prüfungsmodus.
-- Installationsquellen zuletzt am **28. Oktober 2026** geprüft.
