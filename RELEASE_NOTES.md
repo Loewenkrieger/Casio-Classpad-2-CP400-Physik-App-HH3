@@ -1,27 +1,21 @@
 # Physik LK HH3 v1.0.0
 
-Erster Release der eigenstaendigen Hollyhock-3-Projektlinie, 1. November 2026.
-Die App benoetigt weiterhin **PythonExtra.hh3**; dies ist keine native C-/C++-Portierung.
-Das Repository und seine Release-Downloads bleiben privat.
+Lern- und Formel-App für den **Casio ClassPad II (fx-CP400)** mit
+**Hollyhock 3 und PythonExtra.hh3**. Veröffentlicht am 1. November 2026.
 
-## Inhalt
+## Funktionen
 
-- Optimierter HH3-Dateizugriff mit gepruefter Direktpositionierung, Lesebloecken
-  bis 4 KiB und kontrolliertem sequenziellem Ersatzweg.
-- Keine laufenden RAM-Abfragen bei erfolgreichen Bildaufrufen und weniger
-  erzwungene Speicherbereinigungen.
-- Keine Grafiktests, Diagnosemenues, versteckten Vergleichsladewege oder
-  Testbilder in der App. Fachliche Bilder und verstaendliche Fehleranzeigen bleiben erhalten.
-- Hauptmenue: Theorie, Formeln nach Groessen, Formeln nach Themen,
-  Physik-Rechner, Beenden.
-- Unveraenderter fachlicher Umfang: 146 Theorieartikel, 368 eindeutige Formeln,
-  514 Wissenskapitel, 167 Rechner-/Messreihenfunktionen und 39 eigene Abbildungen.
-- Keine privaten PDF-Ausschnitte oder Unterrichtsmaterialien.
+- 146 Theorieartikel und 368 eindeutige Formeln zu Mechanik, Schwingungen,
+  Elektrizität, Wechselstrom sowie Quanten- und Atomphysik.
+- 167 Rechner- und Messreihenfunktionen mit passenden Einheiten.
+- 39 fachliche Skizzen und Rasterbilder, erreichbar aus den zugehörigen Artikeln.
+- Formelsuche nach Größen und Themen, bedienbar über Touchscreen und Tasten.
+- Bedarfsgesteuertes Laden von Wissen und Bildern mit optimierten HH3-Dateizugriffen.
 
-## Downloads und Installation
+## Installation auf dem ClassPad
 
-**ClassPad:** `physik_hh3_classpad_v1_0_0.zip` entpacken und genau diese drei
-Dateien gemeinsam in einen Ordner wie `physik_hh3` auf dem ClassPad kopieren:
+`physik_hh3_classpad_v1_0_0.zip` entpacken und die drei Dateien gemeinsam
+in einen Ordner wie `physik_hh3` auf dem ClassPad kopieren:
 
 ```text
 physchem_final.py
@@ -29,30 +23,30 @@ wissen.txt
 bilder.dat
 ```
 
-Alle drei Dateien zusammen ersetzen. Im gesamten Startpfad keine Leerzeichen,
-Bindestriche oder Klammern verwenden. Geraet sicher auswerfen, PythonExtra
-neu starten und `physchem_final.py` in der Dateiliste auswaehlen.
-Auf dem ClassPad werden weder `cinput.py` noch `gint.py` benoetigt.
+Im gesamten Startpfad keine Leerzeichen, Bindestriche oder Klammern verwenden.
+Gerät sicher auswerfen, PythonExtra neu starten und `physchem_final.py`
+in der Dateiliste auswählen. Bei einem Update alle drei Dateien gemeinsam ersetzen.
+Die App benötigt keine zusätzliche `cinput.py` oder `gint.py` auf dem Taschenrechner.
 
-**PC:** `physik_hh3_pc_v1_0_0.zip` entpacken und unter Windows
-`start_pc_preview.bat` starten. Python 3 mit Tkinter wird vorausgesetzt.
-Die enthaltene `gint.py` ist ausschliesslich die PC-Grafiksimulation.
+## PC-Vorschau
 
-`SHA256SUMS.txt` enthaelt die ZIP- und Manifest-Pruefsummen;
-`manifest.json` dokumentiert zusaetzlich die Pruefsummen der drei App-Dateien.
-Die automatisch von GitHub angebotenen Quellcode-Archive sind nicht das ClassPad-Installationspaket.
+`physik_hh3_pc_v1_0_0.zip` entpacken und unter Windows
+`start_pc_preview.bat` starten. Voraussetzung ist Python 3 mit Tkinter.
+Die enthaltene `gint.py` simuliert die Grafikfunktionen am PC.
 
-## Pruefstatus
+## Prüfsummen
 
-Der Nutzer bestaetigt die Funktion des optimierten Builds auf seinem ClassPad
-und subjektiv kuerzere Bildladezeiten als beim bisherigen HH2-Build.
-Gemeldete Laufzeit: MicroPython v1.25.0-preview.602.gfca9b039f vom 17.02.2026,
-sh7305 mit sh-4a. Genaue Ladezeiten oder ein gemessener Beschleunigungsfaktor
-liegen nicht vor; ein vollstaendiger Hardwaretest aller Funktionen wird nicht behauptet.
+`SHA256SUMS.txt` enthält die ZIP- und Manifest-Prüfsummen.
+`manifest.json` enthält zusätzlich die Prüfsummen der drei App-Dateien.
+Für die Installation das ClassPad-ZIP verwenden, nicht die automatisch
+von GitHub angebotenen Quellcode-Archive.
 
-Die Softwarepruefung umfasst 35 Testgruppen, alle Wissenskapitel,
-Rechnerregressionen, 39 pixelgleiche Bildansichten und gezielte Release-Pruefungen.
-Die PC-Vorschau prueft vollstaendige Bildwechsel, begrenzte Bildreferenzen und Beenden.
-Die drei App-Dateien im Release stimmen bytegenau mit dem geprueften Hauptstand ueberein.
+## Kompatibilität
 
-Die HH2-Projektlinie, ihre Tags und Download-Pakete bleiben unveraendert.
+Am ClassPad erprobte Laufzeit: MicroPython `v1.25.0-preview.602.gfca9b039f`
+vom 17.02.2026, sh7305 mit sh-4a. Ein vollständiger Hardwaretest aller
+Funktionen und standardisierte Ladezeit- oder RAM-Messungen liegen nicht vor.
+
+Die [README](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3#readme)
+enthält die vollständige Installation und Bedienung. Für Hollyhock 2 steht die separate
+[HH2-App](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App) zur Verfügung.
