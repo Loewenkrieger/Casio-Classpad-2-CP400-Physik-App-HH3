@@ -11,3 +11,8 @@ private/
 material/
 /testbuild/
 /release-ready/
+/native-backups/
+/native/build/
+/native/dist/
+/native/vendor/**/*.o
+/native/vendor/**/*.a
