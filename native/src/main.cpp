@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "app.hpp"
 #include "screen_backup.hpp"
+#include "paths.hpp"
 #include <appdef.h>
 #include <sdk/os/input.h>
 #include <sdk/os/lcd.h>
@@ -8,14 +9,14 @@
 APP_NAME("Physik LK Native")
 APP_DESCRIPTION("Native Physik-App: Theorie- und Bildprototyp fuer HH3.")
 APP_AUTHOR("Loewenkrieger")
-APP_VERSION("2.0.0-alpha.1")
+APP_VERSION("2.0.0-alpha.2")
 
-int main(){
+int main(int argc,char** argv){
   if(!physik::screenReady())return 1;
   unsigned int w=0,h=0;LCD_GetSize(&w,&h);
   if(w!=physik::screenWidth||h!=physik::screenHeight)return 1;
   physik::Canvas canvas(LCD_GetVRAMAddress());
-  physik::App app("\\\\fls0\\");
+  physik::App app(physik::dataDirectory(argc>0&&argv?argv[0]:nullptr));
   while(app.running){
     if(app.dirty){app.draw(canvas);LCD_Refresh();}
     alignas(4) Input_Event event{};GetInput(&event,0xffffffff,0x10);

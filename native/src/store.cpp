@@ -2,6 +2,7 @@
 #include "store.hpp"
 #include <algorithm>
 #include <climits>
+#include <cerrno>
 #include <cstdio>
 #include <cstring>
 #include <limits>
@@ -53,22 +54,38 @@ class File {
 public:
   ~File(){close();}
   bool open(const std::string& path){
-    close();
+    close();size=0;sizeKnown=false;error_.clear();
 #ifdef PHYSIK_HH3
-    handle_=File_Open(path.c_str(),FILE_OPEN_READ);
-    if(handle_<0)return false;
-    struct File_Stat info{};
-    if(File_Fstat(handle_,&info)<0){close();return false;}
-    size=info.fileSize;
+    if(!File_Open||!File_Close||!File_Read){error_="Dateischnittstelle nicht verfuegbar";return false;}
+    path_=path;
+    handle_=File_Open(path_.c_str(),FILE_OPEN_READ);
+    if((handle_==FILE_ENOPATH||handle_==FILE_ENOENT||handle_==FILE_EINVAL||handle_==FILE_EBADFSID||handle_==FILE_ENOVOLUME)
+       &&path.rfind("\\fls0\\",0)==0){
+      // Older SDK examples use a second leading separator. Retry only that
+      // documented spelling, and only after a path-related open failure.
+      path_="\\"+path;
+      handle_=File_Open(path_.c_str(),FILE_OPEN_READ);
+    }
+    if(handle_<0)return fail("Datei oeffnen",handle_);
+    // File_Fstat is not required: optional seek probes may fail on a port.
+    // A failed probe can move the cursor, so reset or reopen before reading.
+    if(File_Lseek){
+      const int end=File_Lseek(handle_,0,FILE_SEEK_END);
+      if(end>0&&File_Lseek(handle_,0,FILE_SEEK_CUR)==end){size=static_cast<uint32_t>(end);sizeKnown=true;}
+      if(File_Lseek(handle_,0,FILE_SEEK_SET)!=0||File_Lseek(handle_,0,FILE_SEEK_CUR)!=0){
+        close();handle_=File_Open(path_.c_str(),FILE_OPEN_READ);
+        if(handle_<0)return fail("Datei erneut oeffnen",handle_);
+      }
+    }
 #else
     handle_=std::fopen(path.c_str(),"rb");
-    if(!handle_)return false;
-    if(std::fseek(handle_,0,SEEK_END)!=0){close();return false;}
+    if(!handle_)return fail("Datei oeffnen",errno);
+    if(std::fseek(handle_,0,SEEK_END)!=0)return fail("Dateigroesse",errno);
     const long end=std::ftell(handle_);
-    if(end<0||static_cast<uint64_t>(end)>INT_MAX||std::fseek(handle_,0,SEEK_SET)!=0){close();return false;}
-    size=static_cast<uint32_t>(end);
+    if(end<0||static_cast<uint64_t>(end)>INT_MAX||std::fseek(handle_,0,SEEK_SET)!=0)return fail("Dateigroesse",errno);
+    size=static_cast<uint32_t>(end);sizeKnown=true;
 #endif
-    return size<=INT_MAX;
+    return true;
   }
   void close(){
 #ifdef PHYSIK_HH3
@@ -80,9 +97,9 @@ public:
 #endif
   }
   bool seek(uint32_t offset){
-    if(offset>size)return false;
+    if(offset>INT_MAX||(sizeKnown&&offset>size))return false;
 #ifdef PHYSIK_HH3
-    return File_Lseek(handle_,static_cast<int>(offset),FILE_SEEK_SET)==static_cast<int>(offset)
+    return File_Lseek&&File_Lseek(handle_,static_cast<int>(offset),FILE_SEEK_SET)==static_cast<int>(offset)
         &&File_Lseek(handle_,0,FILE_SEEK_CUR)==static_cast<int>(offset);
 #else
     return std::fseek(handle_,static_cast<long>(offset),SEEK_SET)==0&&std::ftell(handle_)==static_cast<long>(offset);
@@ -97,15 +114,21 @@ public:
 #else
       const int got=static_cast<int>(std::fread(bytes,1,static_cast<size_t>(request),handle_));
 #endif
-      if(got<=0||got>request)return false;
+      if(got==0){error_="Lesen: unerwartetes Dateiende";return false;}
+      if(got<0||got>request)return fail("Lesen",got);
       bytes+=got;count-=static_cast<size_t>(got);
     }
     return true;
   }
   uint32_t size=0;
+  bool sizeKnown=false;
+  const std::string& error()const{return error_;}
 private:
+  bool fail(const char* step,int code){error_=std::string(step)+": Fehlercode "+std::to_string(code);return false;}
+  std::string error_;
 #ifdef PHYSIK_HH3
   int handle_=-1;
+  std::string path_;
 #else
   std::FILE* handle_=nullptr;
 #endif
@@ -134,25 +157,25 @@ std::string encodeRecord(const Value& value){
 }
 bool Store::read(int kind,uint32_t offset,uint32_t length,std::vector<uint8_t>& result){
   result.clear();error_.clear();
-  if(kind<0||kind>1||length>maxRead||offset<std::strlen(headers[kind])){
+  if(kind<0||kind>1||length>maxRead||offset<std::strlen(headers[kind])||offset>INT_MAX||length>INT_MAX-offset){
     error_="Ungueltiger Datenbereich";return false;
   }
   const std::string path=directory_+filenames[kind];
   File file;
-  if(!file.open(path)){error_=std::string(filenames[kind])+" fehlt oder ist nicht lesbar";return false;}
-  if(offset>file.size||length>file.size-offset){error_="Datendatei ist verkuerzt";return false;}
-  if(!header(file,kind)){error_=std::string(filenames[kind])+" passt nicht zur App";return false;}
+  if(!file.open(path)){error_=path+"\n"+file.error();return false;}
+  if(file.sizeKnown&&(offset>file.size||length>file.size-offset)){error_=path+"\nDatendatei ist verkuerzt ("+std::to_string(file.size)+" Bytes)";return false;}
+  if(!header(file,kind)){error_=path+"\n"+(file.error().empty()?"Paketkennung passt nicht zur App":file.error());return false;}
   if(!file.seek(offset)){
-    if(!file.open(path)||!header(file,kind)){error_="Dateiposition nicht erreichbar";return false;}
+    if(!file.open(path)||!header(file,kind)){error_=path+"\nDateiposition nicht erreichbar\n"+file.error();return false;}
     uint8_t discard[4096];
     uint32_t remaining=offset-static_cast<uint32_t>(std::strlen(headers[kind]));
     while(remaining){const uint32_t count=std::min<uint32_t>(sizeof(discard),remaining);
-      if(!file.exact(discard,count)){error_="Dateiposition nicht erreichbar";return false;}
+      if(!file.exact(discard,count)){error_=path+"\nDateiposition nicht erreichbar\n"+file.error();return false;}
       remaining-=count;
     }
   }
   result.resize(length);
-  if(!file.exact(result.data(),length)){result.clear();error_="Daten unvollstaendig gelesen";return false;}
+  if(!file.exact(result.data(),length)){result.clear();error_=path+"\n"+file.error();return false;}
   return true;
 }
 bool Store::row(Table table,uint32_t index,Value& result){

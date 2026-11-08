@@ -10,7 +10,7 @@ from elf_layout import APP_START, APP_END, inspect_elf, startup_hooks
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT.parent
-VERSION = "2.0.0-alpha.1"
+VERSION = "2.0.0-alpha.2"
 
 
 def digest(path):
@@ -50,7 +50,7 @@ def main():
         shutil.copyfile(PROJECT / name, folder / name)
     names = ("physik.hh3", "wissen.txt", "bilder.dat")
     assert {p.name for p in folder.iterdir()} == set(names)
-    output = ROOT / "dist/physik_native_2_0_0_alpha_1.zip"
+    output = ROOT / "dist/physik_native_2_0_0_alpha_2.zip"
     with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED) as archive:
         for name in names:
             archive.write(folder / name, name)

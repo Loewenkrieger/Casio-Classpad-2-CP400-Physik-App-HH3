@@ -1,6 +1,6 @@
 # Physik LK Native: lokaler Prototyp
 
-Entwicklungsstand `2.0.0-alpha.1`, noch kein vollständiger Ersatz für die Python-App.
+Entwicklungsstand `2.0.0-alpha.2`, noch kein vollständiger Ersatz für die Python-App.
 Native C++20-App mit dem HH3-SDK und der Werkzeugbasis von Mathe Vektor.
 Alle Quellen, Ausgaben und Sicherungen liegen auf E:. Keine GitHub-Veröffentlichung.
 
@@ -17,7 +17,7 @@ Ihre Menüpunkte zeigen einen entsprechenden Hinweis, keine Beispielrechnung.
 
 ## Auf dem ClassPad testen
 
-1. `dist/physik_native_2_0_0_alpha_1.zip` entpacken.
+1. `dist/physik_native_2_0_0_alpha_2.zip` entpacken.
 2. `physik.hh3`, `wissen.txt` und `bilder.dat` gemeinsam ins Hauptverzeichnis
    des Taschenrechners neben `run.bin` kopieren. PythonExtra ist nicht nötig.
 3. Im HH3-Launcher **Physik LK Native** öffnen.
@@ -30,6 +30,13 @@ Ihre Menüpunkte zeigen einen entsprechenden Hinweis, keine Beispielrechnung.
 
 Bitte insbesondere Start, Schriftlesbarkeit, Bildfarben, vollständige Rasterbilder,
 Rückkehr zum Text und Launcher prüfen. PC-Tests sind keine Hardwarefreigabe.
+
+Die Datenpfade werden aus dem vom Launcher übergebenen Programmpfad abgeleitet.
+Ohne Startpfad wird das Hauptverzeichnis `\fls0\` verwendet.
+Falls die Dateischnittstelle die ältere SDK-Pfadschreibweise benötigt,
+wird diese nach einem pfadbezogenen Öffnungsfehler berücksichtigt. Eine fehlende
+Dateigrößenabfrage verhindert das Lesen nicht; Paketkennung und begrenzte
+Lesezugriffe bleiben geprüft. Bei Fehlern erscheinen Pfad, Schritt und Fehlercode.
 
 ## Lokal bauen
 

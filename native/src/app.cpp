@@ -76,7 +76,7 @@ void App::draw(Canvas& c){
     const int count=page==Home?5:3;
     for(int i=0;i<count;++i){const int y=58+i*48;if(i==selected)c.rect(6,y-3,308,44,selectedColor);
       c.text(12,y+8,c.fit(page==Home?homeItems[i]:chapterNames[i],296),fg);}
-    c.text(10,395,"Native Vorabversion",dim);c.text(10,420,"Theorie und Bilder: 3 Themen",dim,true);
+    c.text(10,395,"Native Vorabversion alpha.2",dim);c.text(10,420,"Theorie und Bilder: 3 Themen",dim,true);
     c.text(10,442,"Andere Bereiche folgen spaeter.",dim,true);
     c.text(10,495,"EXE: oeffnen   Clear: zurueck",dim,true);
   }else if(page==Article){
