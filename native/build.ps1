@@ -12,6 +12,8 @@ $env:TMP=$env:TEMP=Join-Path $root 'build\tmp'
 $env:PYTHONDONTWRITEBYTECODE='1'
 Push-Location -LiteralPath $root
 try {
+  & $Python -B tools/generate_equations.py
+  if ($LASTEXITCODE -ne 0) { throw 'Native Formelgenerierung fehlgeschlagen' }
   & $Python -B tools/reference.py
   if ($LASTEXITCODE -ne 0) { throw 'Referenzdaten fehlgeschlagen' }
   $linuxRoot=(& wsl -d kali-linux -- wslpath -u $root).Trim()
@@ -24,6 +26,8 @@ try {
   if ($LASTEXITCODE -ne 0) { throw 'Native Host-Tests fehlgeschlagen' }
   & wsl -d kali-linux --cd $linuxRoot -- env ASAN_OPTIONS=detect_leaks=1 UBSAN_OPTIONS=halt_on_error=1 ./build/sdk-file-tests 2>&1 | Tee-Object -FilePath (Join-Path $root 'dist\sdk-file-tests.log')
   if ($LASTEXITCODE -ne 0) { throw 'Native Dateischnittstellen-Tests fehlgeschlagen' }
+  & wsl -d kali-linux --cd $linuxRoot -- env ASAN_OPTIONS=detect_leaks=1 UBSAN_OPTIONS=halt_on_error=1 ./build/calculator-tests 2>&1 | Tee-Object -FilePath (Join-Path $root 'dist\calculator-tests.log')
+  if ($LASTEXITCODE -ne 0) { throw 'Native Rechnertests fehlgeschlagen' }
   & wsl -d kali-linux -u root -- docker run --pull never --rm --read-only --network none --cap-drop ALL --security-opt no-new-privileges --mount "type=bind,source=$linuxProject,target=/project" --env TMPDIR=/project/native/build/tmp --env HOME=/project/native/build/home --workdir /project/native $image make hh3
   if ($LASTEXITCODE -ne 0) { throw 'HH3-Cross-Build fehlgeschlagen' }
   & $Python -B tools/verify.py

@@ -3,6 +3,7 @@
 #include "screen_backup.hpp"
 #include <algorithm>
 #include <cstdlib>
+#include <cstdio>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -25,6 +26,26 @@ void snapshot(const std::string& name,const std::vector<uint16_t>& frame){
   const auto pixels=rgb(frame,0,0,320,528);output.write(reinterpret_cast<const char*>(pixels.data()),pixels.size());require(output.good(),"snapshot "+name);
 }
 void tap(physik::App& app,int x,int y){app.touchDown(x,y);app.touchUp();}
+void choose(physik::App& app,int index){
+  const auto labels=app.labels();require(index>=0&&index<static_cast<int>(labels.size()),"menu index");
+  const int delta=index-app.selected;
+  for(int i=0;i<std::abs(delta);++i)app.key(delta<0?physik::Up:physik::Down);
+  require(app.selected==index,"menu selection");app.key(physik::Enter);
+}
+void choose(physik::App& app,const std::string& label){
+  const auto labels=app.labels();const auto found=std::find(labels.begin(),labels.end(),label);
+  require(found!=labels.end(),"menu label "+label);choose(app,static_cast<int>(found-labels.begin()));
+}
+void home(physik::App& app){
+  for(int i=0;i<8&&app.page!=physik::App::Home;++i)app.key(physik::Back);
+  require(app.running&&app.page==physik::App::Home,"return home");
+}
+void type(physik::App& app,const std::string& value){for(char key:value)app.key(key);}
+void number(physik::App& app,double value){char text[48]{};std::snprintf(text,sizeof(text),"%.17g",value);type(app,text);app.key(physik::Enter);}
+void quantumArticle(physik::App& app,const std::string& title){
+  home(app);choose(app,0);choose(app,"Quanten: Materiewellen / Beugung");choose(app,title);
+  require(app.page==physik::App::Article,"quantum article");
+}
 }
 int main(){
   using namespace physik;
@@ -32,7 +53,11 @@ int main(){
   Store store("../");
   std::ifstream recordFixtures("build/reference/records.ref",std::ios::binary);
   uint32_t expectedRows=u32(recordFixtures),rows=0;
-  for(Table table:tables)for(uint32_t i=0;i<table.count;++i){Value value;require(store.row(table,i,value),store.error());require(encodeRecord(value)==next(recordFixtures),"record equality");++rows;}
+  for(Table table:tables){
+    std::vector<Value> batch;require(store.rows(table,0,table.count,batch),store.error());require(batch.size()==table.count,"batch count");
+    for(uint32_t i=0;i<table.count;++i){Value value;require(store.row(table,i,value),store.error());
+      require(encodeRecord(value)==next(recordFixtures),"record equality");require(encodeRecord(batch[i])==encodeRecord(value),"batch row equality");++rows;}
+  }
   require(rows==expectedRows,"all table rows");
   std::cout<<"Indexed records: "<<rows<<" match the Python reference\n";
   std::ifstream chapterFixtures("build/reference/chapters.ref",std::ios::binary);
@@ -40,6 +65,15 @@ int main(){
   for(uint32_t i=0;i<514;++i){std::string chapter;require(store.chapter(i,chapter),store.error());require(chapter==next(chapterFixtures),"chapter equality "+std::to_string(i));}
   std::cout<<"Knowledge chapters: 514 match the Python reference\n";
   std::string text;Value value;std::string error;
+  std::vector<Value> invalidRows;
+  require(!store.rows(entries,entries.count,1,invalidRows),"batch past table");
+  require(!store.rows(entries,UINT32_MAX,1,invalidRows),"batch start overflow");
+  require(!store.rows(Table{0,1,UINT32_MAX,72},0,1,invalidRows),"batch offset overflow");
+  require(!store.rows(Table{0,UINT32_MAX,33,4096},0,UINT32_MAX,invalidRows),"batch allocation limit");
+  require(!store.rows(Table{0,1,33,0},0,1,invalidRows),"batch zero width");
+  for(uint32_t i:{0u,calcNotes.count-1}){Value note;require(store.row(calcNotes,i,note),"note reference");
+    require(store.note(note.items[0].text,text)&&text==note.items[1].text,"calculator note equality");}
+  require(store.note("not_present",text)&&text.empty(),"absent calculator note");
   require(!store.chapter(514,text),"chapter out of bounds");
   for(const std::string invalid:{"", "t33:", "s4:abc", "x1:", "i999999999999999:", "i1:garbage", "t1:t1:t1:t1:t1:t1:t1:t1:i1:"})require(!decodeRecord(invalid,value,error),"invalid record rejected");
   std::vector<uint8_t> data;
@@ -72,25 +106,63 @@ int main(){
   {std::ofstream output("build/bad/bilder.dat",std::ios::binary);output.write(corrupted.data(),corrupted.size());}
   require(broken.media("electron_tube",bad),"corrupt pixel metadata readable");
   require(!broken.imageData(bad,data)&&data.empty(),"corrupt image checksum rejected");
+  App browse("../");int entryCount=0,calcCount=0;
+  for(int mode=0;mode<3;++mode){
+    choose(browse,mode);require(browse.page==App::Theory,"all browse modes");const auto sectionsCount=browse.labels().size();
+    for(size_t section=0;section<sectionsCount;++section){
+      choose(browse,section);require(browse.page==App::Entries,"section entries");const auto count=browse.labels().size();
+      for(size_t entry=0;entry<count;++entry){choose(browse,entry);require(browse.page==App::Article,"all article links");++entryCount;browse.key(Back);}
+      browse.key(Back);
+    }
+    browse.key(Back);
+  }
+  require(entryCount==840,"all 840 browse entries reachable");
+  choose(browse,3);require(browse.labels().size()==17,"all calculator categories");
+  for(int category=0;category<17;++category){
+    choose(browse,category);require(browse.page==App::Calcs,"calculator category");const auto count=browse.labels().size();
+    for(size_t calc=0;calc<count;++calc){choose(browse,calc);require(browse.page==App::Form,"all calculator forms");++calcCount;browse.key(Back);}
+    browse.key(Back);
+  }
+  require(calcCount==167,"all 167 calculators reachable");
   App app("../");app.draw(canvas);snapshot("home",frame);
-  app.key(Enter);require(app.page==App::Theory,"theory opens");app.draw(canvas);snapshot("theory",frame);
-  app.key(Enter);require(app.page==App::Article,"article opens");app.draw(canvas);snapshot("article",frame);
+  choose(app,0);require(app.page==App::Theory,"theory opens");app.draw(canvas);snapshot("theory",frame);
+  choose(app,"Quanten: Materiewellen / Beugung");app.draw(canvas);snapshot("entries",frame);
+  choose(app,"De Broglie und Modellgrenzen");require(app.page==App::Article,"article opens");app.draw(canvas);snapshot("article",frame);
   app.key(Down);app.key(Down);const int oldScroll=app.scroll;require(oldScroll>0,"article scrolling");
   app.key(Enter);require(app.page==App::Image,"EXE opens images");app.draw(canvas);snapshot("vector",frame);
   app.key(Right);app.draw(canvas);require(app.image==1,"next image");snapshot("rings",frame);
   for(int i=0;i<20;++i){app.key(Right);app.draw(canvas);require(app.page==App::Image,"twenty image switches");}
   app.key(Back);require(app.page==App::Article&&app.scroll==oldScroll,"article position preserved");
-  app.key(Back);app.key(Down);app.key(Enter);app.key(Enter);app.key(Right);app.draw(canvas);snapshot("events",frame);
+  quantumArticle(app,"Doppelspalt mit Quantenobjekten");app.key(Enter);app.key(Right);app.draw(canvas);snapshot("events",frame);
   require(app.page==App::Image&&app.image==1,"P4 article navigation");
-  app.key(Back);app.key(Back);app.key(Back);require(app.page==App::Home,"return home");
-  for(int i=0;i<3;++i)app.key(Down);
-  app.key(Enter);require(app.page==App::Message,"unported calculator labelled");app.key(Back);
-  app.key(Down);app.key(Enter);require(!app.running,"Beenden closes app");
-  App touch("../");tap(touch,40,78);tap(touch,40,78);require(touch.page==App::Article,"touch article");
+  home(app);choose(app,3);choose(app,0);choose(app,0);type(app,"2");app.key(Enter);
+  require(app.page==App::Message&&app.messageText().find("T = 0.5 s")!=std::string::npos,"period UI result");app.draw(canvas);snapshot("period_result",frame);
+  app.key(Back);type(app,"4");app.key(Enter);require(app.messageText().find("T = 0.25 s")!=std::string::npos,"replace prior input");
+  app.key(Back);app.key('E');app.key(Enter);require(app.messageText().find("T = 0.25 s")!=std::string::npos,"invalid initial exponent preserves prior input");
+  app.key(Back);type(app,"0");app.key(Enter);require(app.page==App::Message&&app.messageText().find("0.25")==std::string::npos,"zero denominator message");
+  app.key(Back);tap(app,115,386);tap(app,193,444);require(app.messageText().find("T = 0.5 s")!=std::string::npos,"touch number and OK");
+  home(app);choose(app,3);choose(app,8);choose(app,1);type(app,"500");app.draw(canvas);snapshot("photon_form",frame);app.key(Enter);
+  require(app.page==App::Message&&app.messageText().find("2.47968 eV")!=std::string::npos,"500 nm UI result");app.draw(canvas);snapshot("photon_result",frame);
+  app.key(Back);tap(app,270,444);app.key(Enter);require(app.messageText().find("2479.68 eV")!=std::string::npos,"unit change to pm");
+  home(app);choose(app,3);choose(app,2);choose(app,0);type(app,"1");app.key(Enter);require(app.field==1,"advance to next input");
+  app.key(Left);require(app.field==0,"return from empty next field");
+  for(int workflow=0;workflow<4;++workflow){
+    home(app);choose(app,3);choose(app,16);choose(app,workflow);
+    const bool wavelength=workflow>=2,variable=workflow%2==1;const int count=variable?3:2;
+    if(variable)number(app,count);
+    for(int i=0;i<count;++i){const double frequency=(600+i*100)*1e12;
+      number(app,wavelength?light/frequency*1e9:frequency/1e12);number(app,planck*frequency/charge-2);}
+    require(app.page==App::Message&&app.messageText().find("6.62607e-34")!=std::string::npos&&app.messageText().find("W_A")!=std::string::npos,"Planck UI workflow "+std::to_string(workflow));
+    if(workflow==3){app.draw(canvas);snapshot("fit_result",frame);}
+  }
+  home(app);choose(app,4);require(!app.running,"Beenden closes app");
+  App touch("../");quantumArticle(touch,"De Broglie und Modellgrenzen");
   touch.touchDown(100,250);touch.touchMove(100,180);touch.touchUp();require(touch.scroll>0,"touch scroll");
   tap(touch,260,505);require(touch.page==App::Image,"touch image button");touch.draw(canvas);tap(touch,155,505);require(touch.image==1,"touch next image");
-  tap(touch,260,505);require(touch.page==App::Article,"touch return");tap(touch,15,20);tap(touch,15,20);touch.key(Clear);require(!touch.running,"Clear closes home");
-  App corrupt("build/bad/");corrupt.key(Enter);corrupt.key(Enter);corrupt.key(Enter);corrupt.draw(canvas);
+  tap(touch,260,505);require(touch.page==App::Article,"touch return");tap(touch,15,20);require(touch.page==App::Entries,"touch back to entries");
+  home(touch);tap(touch,40,78);touch.touchDown(100,350);touch.touchMove(100,120);touch.touchUp();require(touch.selected>0,"touch menu scrolling");
+  home(touch);touch.key(Clear);require(!touch.running,"Clear closes home");
+  App corrupt("build/bad/");quantumArticle(corrupt,"De Broglie und Modellgrenzen");corrupt.key(Enter);corrupt.draw(canvas);
   require(corrupt.page==App::Message,"media failure shown");corrupt.key(Back);require(corrupt.page==App::Article,"media error returns to theory");
   std::vector<uint16_t> guarded(320*528+2,0x1357);Canvas bounds(guarded.data()+1);
   bounds.rect(-20,-20,400,600,0);bounds.line(-100,-100,420,628,0xffff);bounds.text(-10,-10,"clipping",0xffff);
@@ -98,5 +170,5 @@ int main(){
   ScreenBackup backup;require(!backup.save(nullptr,std::malloc,std::free),"screen null rejected");
   require(backup.save(frame.data(),std::malloc,std::free),"screen backup allocated");const auto saved=frame;
   std::fill(frame.begin(),frame.end(),0);require(backup.restore()&&frame==saved,"screen restored");require(!backup.restore(),"no duplicate release");
-  std::cout<<"PASS: "<<checks<<" checks; "<<rows<<" records; 514 chapters; 39 media; 3 exact rasters; 20 image switches\n";
+  std::cout<<"PASS: "<<checks<<" checks; "<<rows<<" records; 514 chapters; 39 media; 3 exact rasters; 20 image switches; "<<entryCount<<" browse entries; "<<calcCount<<" calculators\n";
 }

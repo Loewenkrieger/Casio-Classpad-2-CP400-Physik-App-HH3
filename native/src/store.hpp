@@ -32,6 +32,8 @@ class Store {
 public:
   explicit Store(std::string directory):directory_(std::move(directory)){}
   bool row(Table table, uint32_t index, Value& result);
+  bool rows(Table table,uint32_t start,uint32_t count,std::vector<Value>& result);
+  bool note(const std::string& id,std::string& result);
   bool chapter(uint32_t index, std::string& result);
   bool media(const std::string& id, Media& result);
   bool images(uint32_t chapter, std::vector<std::string>& result);

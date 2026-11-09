@@ -186,6 +186,28 @@ bool Store::row(Table table,uint32_t index,Value& result){
   if(!read(table.file,table.start+index*table.width,table.width,bytes))return false;
   return decodeRecord(std::string(bytes.begin(),bytes.end()),result,error_);
 }
+bool Store::rows(Table table,uint32_t start,uint32_t count,std::vector<Value>& result){
+  result.clear();
+  const uint64_t offset=static_cast<uint64_t>(table.start)+static_cast<uint64_t>(start)*table.width;
+  const uint64_t length=static_cast<uint64_t>(count)*table.width;
+  if(start>table.count||count>table.count-start||table.width==0||table.width>4096||offset>INT_MAX||length>maxRead){error_="Ungueltiger Menuebereich";return false;}
+  std::vector<uint8_t> bytes;
+  if(!read(table.file,static_cast<uint32_t>(offset),static_cast<uint32_t>(length),bytes))return false;
+  result.resize(count);
+  for(uint32_t i=0;i<count;++i){const auto begin=bytes.begin()+i*table.width;
+    if(!decodeRecord(std::string(begin,begin+table.width),result[i],error_)){result.clear();return false;}
+  }
+  return true;
+}
+bool Store::note(const std::string& id,std::string& result){
+  result.clear();std::vector<Value> values;
+  if(!rows(calcNotes,0,calcNotes.count,values))return false;
+  for(const auto& value:values){
+    if(!tuple(value,2)||value.items[0].type!=Value::Text||value.items[1].type!=Value::Text){error_="Ungueltiger Geltungshinweis";return false;}
+    if(value.items[0].text==id){result=value.items[1].text;break;}
+  }
+  return true;
+}
 bool Store::chapter(uint32_t index,std::string& result){
   result.clear();Value value;uint32_t start=0,length=0;
   if(!row(chapters,index,value))return false;

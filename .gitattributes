@@ -6,6 +6,7 @@ bilder.dat binary
 .gitattributes text eol=lf
 native/**/*.cpp text eol=lf
 native/**/*.hpp text eol=lf
+native/**/*.inc text eol=lf
 native/**/*.h text eol=lf
 native/**/*.def text eol=lf
 native/**/*.ps1 text eol=lf

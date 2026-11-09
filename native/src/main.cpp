@@ -7,9 +7,9 @@
 #include <sdk/os/lcd.h>
 
 APP_NAME("Physik LK Native")
-APP_DESCRIPTION("Native Physik-App: Theorie- und Bildprototyp fuer HH3.")
+APP_DESCRIPTION("Physik-Lernapp mit Theorie, Formelsuche, Rechner und Abbildungen.")
 APP_AUTHOR("Loewenkrieger")
-APP_VERSION("2.0.0-alpha.2")
+APP_VERSION("2.0.0-alpha.3")
 
 int main(int argc,char** argv){
   if(!physik::screenReady())return 1;
@@ -26,7 +26,9 @@ int main(int argc,char** argv){
         case KEYCODE_UP:key=physik::Up;break;case KEYCODE_DOWN:key=physik::Down;break;
         case KEYCODE_LEFT:key=physik::Left;break;case KEYCODE_RIGHT:key=physik::Right;break;
         case KEYCODE_EXE:key=physik::Enter;break;case KEYCODE_POWER_CLEAR:key=physik::Clear;break;
-        case KEYCODE_BACKSPACE:key=physik::Back;break;default:break;
+        case KEYCODE_BACKSPACE:key=127;break;
+        case KEYCODE_NEGATIVE:key='-';break;case KEYCODE_EXP:key='E';break;
+        default:if(event.data.key.keyCode>=32&&event.data.key.keyCode<127)key=event.data.key.keyCode;break;
       }
       if(key)app.key(key,event.data.key.direction==KEY_HELD);
     }else if(event.type==EVENT_TOUCH){const auto touch=event.data.touch_single;
