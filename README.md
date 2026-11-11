@@ -5,6 +5,13 @@
 einen Physik-Rechner und passende Abbildungen in einer Oberfläche für
 Touchscreen und Tasten.
 
+> [!TIP]
+> Zusätzlich gibt es eine **native Beta-Version für Hollyhock 3**:
+> [v2.0.0-beta.1 herunterladen](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v2.0.0-beta.1).
+> Sie startet direkt als `physik.hh3`, ohne PythonExtra.
+> [Installation und Beta-Hinweise](native/README.md).
+> Die folgende Anleitung beschreibt weiterhin die Python-Version.
+
 > [!NOTE]
 > Die App ist für **Hollyhock 3 mit PythonExtra.hh3** vorgesehen.
 > Für Hollyhock 2 steht die separate

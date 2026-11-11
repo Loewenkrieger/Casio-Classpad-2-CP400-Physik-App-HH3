@@ -10,7 +10,7 @@ from elf_layout import APP_START, APP_END, inspect_elf, startup_hooks
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT.parent
-VERSION = "2.0.0-alpha.3"
+VERSION = "2.0.0-beta.1"
 
 
 def digest(path):
@@ -54,7 +54,7 @@ def main():
         shutil.copyfile(PROJECT / name, folder / name)
     names = ("physik.hh3", "wissen.txt", "bilder.dat")
     assert {p.name for p in folder.iterdir()} == set(names)
-    output = ROOT / "dist/physik_native_2_0_0_alpha_3.zip"
+    output = ROOT / "dist/physik_hh3_native_v2_0_0_beta_1.zip"
     with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED) as archive:
         for name in names:
             archive.write(folder / name, name)
@@ -63,7 +63,7 @@ def main():
         assert set(archive.namelist()) == set(names)
         for name in names:
             assert archive.read(name) == (folder / name).read_bytes()
-    report = dict(version=VERSION, stage="native full-feature test candidate", hardware_tested=False,
+    report = dict(version=VERSION, stage="native beta prerelease", hardware_tested=False,
                   predecessor_device_feedback="alpha.2: files open, fast complete images and navigation confirmed by user; no numerical timing",
                   source_sha256=sources(),
                   tests=dict(host_checks=int(checks[1]), indexed_records=1864, chapters=514, media=39,
@@ -78,7 +78,9 @@ def main():
                   sdk_commit="1e483e395391d50d9bd2d21cee4beecc7589fb1c",
                   toolchain_image="ghcr.io/classpaddev/hollyhock-3@sha256:4381a460f8b19411552ac30f2aba73da38d3aba535412a66c69f8528fe94b49a")
     (ROOT / "dist/manifest.json").write_text(json.dumps(report, indent=2) + "\n", encoding="ascii")
-    (ROOT / "dist/SHA256SUMS.txt").write_text(digest(output) + "  " + output.name + "\n", encoding="ascii")
+    (ROOT / "dist/SHA256SUMS.txt").write_text(
+        digest(output) + "  " + output.name + "\n" +
+        digest(ROOT / "dist/manifest.json") + "  manifest.json\n", encoding="ascii")
     print(f"PASS: native HH3 {footprint}/{APP_END-APP_START} program bytes, startup hooks, three-file package")
     print(output)
 

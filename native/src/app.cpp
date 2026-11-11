@@ -255,7 +255,7 @@ void App::draw(Canvas& c){
       const int index=first+slot,y=58+slot*48;if(index==selected)c.rect(6,y-3,308,44,selectedColor);
       c.text(12,y+8,c.fit(items[index],296),fg);
     }
-    if(page==Home){c.text(10,395,"Native Vorabversion alpha.3",dim);c.text(10,420,"Theorie, Formeln und Rechner",dim,true);}
+    if(page==Home){c.text(10,395,"Native Beta 2.0.0-beta.1",dim);c.text(10,420,"Theorie, Formeln und Rechner",dim,true);}
     c.text(10,495,"EXE: oeffnen   Clear: zurueck",dim,true);
   }else if(page==Article){
     header(c,title,true);

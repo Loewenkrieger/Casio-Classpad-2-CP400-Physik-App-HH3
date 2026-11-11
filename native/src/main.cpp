@@ -9,7 +9,7 @@
 APP_NAME("Physik LK Native")
 APP_DESCRIPTION("Physik-Lernapp mit Theorie, Formelsuche, Rechner und Abbildungen.")
 APP_AUTHOR("Loewenkrieger")
-APP_VERSION("2.0.0-alpha.3")
+APP_VERSION("2.0.0-beta.1")
 
 int main(int argc,char** argv){
   if(!physik::screenReady())return 1;

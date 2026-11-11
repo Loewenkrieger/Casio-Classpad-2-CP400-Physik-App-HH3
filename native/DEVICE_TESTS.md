@@ -2,7 +2,7 @@
 
 ## Alpha.2: Rueckmeldung vom 8. November 2026
 
-Vom Nutzer auf dem ClassPad mit Hollyhock 3 bestaetigt:
+Auf dem ClassPad mit Hollyhock 3 bestaetigt:
 
 - `wissen.txt` und `bilder.dat` werden gemeinsam mit `physik.hh3` im
   Hauptverzeichnis gefunden.
@@ -11,8 +11,6 @@ Vom Nutzer auf dem ClassPad mit Hollyhock 3 bestaetigt:
 
 Das ist eine qualitative Rueckmeldung, keine gemessene Zeitreihe oder Pruefung
 saemtlicher Funktionen. Die damalige Version enthielt nur drei Theorie-Themen.
-Der bestaetigte Stand und seine Pruefberichte bleiben unter
-`../native-backups/2026-11-08_alpha2_device_pass_b5128ca6` erhalten.
 
 ## Alpha.3: Noch nicht am Geraet bestaetigt
 
@@ -30,3 +28,9 @@ Offene Geraetestichproben:
 - Bildwechsel, erhaltene Textposition und Rueckkehr zum Launcher.
 
 Die Rueckmeldung zu alpha.2 ersetzt diese Pruefung nicht.
+
+## Beta.1
+
+`2.0.0-beta.1` veroeffentlicht den Funktionsstand von alpha.3 mit angepasster
+Versionsanzeige. Rechenlogik, Dateileser und Datendateien sind unveraendert.
+Die oben aufgefuehrten offenen Geraetestichproben gelten weiterhin.

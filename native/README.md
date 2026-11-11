@@ -1,9 +1,12 @@
 # Physik LK Native
 
-Lokale Testversion `2.0.0-alpha.3` fuer Hollyhock 3.
+Native Beta-Version `2.0.0-beta.1` fuer Hollyhock 3.
 Native C++20-App mit dem HH3-SDK und der Werkzeugbasis von Mathe Vektor.
 Die App startet direkt als `physik.hh3`; PythonExtra wird nicht benoetigt.
-Alle Quellen, Ausgaben und Sicherungen liegen auf E:. Keine GitHub-Veröffentlichung.
+
+[Beta herunterladen](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v2.0.0-beta.1).
+Diese Vorabversion ist noch kein stabiler Release. Die bisherige Python-Version
+bleibt separat als v1.0.0 verfuegbar.
 
 ## Verfügbar
 
@@ -24,7 +27,7 @@ auf dem ClassPad gibt es weder Python-Ausfuehrung noch `eval()`.
 
 ## Auf dem ClassPad testen
 
-1. `dist/physik_native_2_0_0_alpha_3.zip` entpacken.
+1. `physik_hh3_native_v2_0_0_beta_1.zip` aus dem Beta-Release herunterladen und entpacken.
 2. `physik.hh3`, `wissen.txt` und `bilder.dat` gemeinsam ins Hauptverzeichnis
    des Taschenrechners neben `run.bin` kopieren. PythonExtra ist nicht nötig.
 3. Im HH3-Launcher **Physik LK Native** öffnen.
@@ -37,9 +40,10 @@ auf dem ClassPad gibt es weder Python-Ausfuehrung noch `eval()`.
    Linienspektrum pruefen. Bilder sollen vollstaendig und farblich korrekt sein.
 8. Mehrfach zwischen Ansichten wechseln, danach über Beenden zum Launcher zurückkehren.
 
-Beim Wechsel von alpha.2 sind die Datendateien unveraendert; nur `physik.hh3`
-muss ersetzt werden. Das ZIP enthaelt dennoch alle drei passenden Dateien.
-Der bestaetigte alpha.2-Stand bleibt unter `native-backups` gesichert.
+Das ZIP enthaelt genau `physik.hh3`, `wissen.txt` und `bilder.dat`.
+Alle drei Dateien gehoeren gemeinsam in denselben Ordner. Fuer die erste
+Beta-Installation das vollstaendige Paket verwenden. `cinput.py`, `gint.py`
+und PythonExtra sind nicht erforderlich.
 
 ## Rechner bedienen
 
@@ -55,11 +59,12 @@ Die hinterlegten Konstanten bleiben unveraendert.
 
 ## Pruefstatus
 
-Alpha.2 wurde am Geraet bestaetigt: Dateien werden gefunden, Bilder laden schnell
+Die native Basis wurde mit alpha.2 am Geraet bestaetigt: Dateien werden gefunden, Bilder laden schnell
 und vollstaendig, die Navigation funktioniert gut. Es liegen keine gemessenen
 Zeitwerte und keine vollstaendige Hardwarepruefung aller Funktionen vor.
 
-**Die neuen alpha.3-Funktionen muessen noch auf dem ClassPad geprueft werden.**
+Die vollstaendigen Menues und Rechnerfunktionen kamen mit alpha.3 hinzu.
+**Eine vollstaendige Hardwarepruefung dieser Beta steht noch aus.**
 Geeignete Stichproben:
 
 1. **Physik-Rechner > Grundgroessen > T aus f**: `2 Hz` ergibt `0.5 s`.
@@ -80,12 +85,15 @@ Lesezugriffe bleiben geprüft. Bei Fehlern erscheinen Pfad, Schritt und Fehlerco
 
 ## Lokal bauen
 
+Im Verzeichnis `native`:
+
 ```powershell
 .\build.ps1 -Python <Pfad-zum-vorhandenen-Python>
 ```
 
-Der Build verwendet die vorhandene WSL-Distribution `kali-linux` unter `E:\WSL\Kali`,
-den dort vorhandenen Host-Compiler und das lokal vorhandene, festgelegte SDK-Image.
+Das Windows-Buildscript setzt einen Projektpfad auf E:, Python 3 mit Pillow,
+die WSL-Distribution `kali-linux` mit C++-Host-Compiler und Docker sowie das
+im Script festgelegte HH3-SDK-Image voraus. Das SDK-Image muss bereits lokal vorliegen.
 Docker lädt keine Images herunter und hat beim Build keinen Netzwerkzugriff.
 Temporäre Compilerdateien und Python-Ausgaben bleiben im Verzeichnis `native/build`.
 
