@@ -7,8 +7,10 @@ Touchscreen und Tasten.
 
 > [!TIP]
 > Zusätzlich gibt es eine **native Beta-Version für Hollyhock 3**:
-> [v2.0.0-beta.1 herunterladen](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v2.0.0-beta.1).
+> [v2.0.0-beta.6 herunterladen](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v2.0.0-beta.6).
 > Sie startet direkt als `physik.hh3`, ohne PythonExtra.
+> Enthalten sind 546 Wissenskapitel, 428 Rechnerfunktionen sowie Themensuche
+> und eine alphabetische Formelsuche mit 142 Größen.
 > [Installation und Beta-Hinweise](native/README.md).
 > Die folgende Anleitung beschreibt weiterhin die Python-Version.
 
@@ -22,11 +24,14 @@ Touchscreen und Tasten.
 
 | Paket | Verwendung |
 | --- | --- |
+| [Native Beta.6](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/download/v2.0.0-beta.6/physik_hh3_native_v2_0_0_beta_6_test.zip) | Native HH3-App ohne PythonExtra, Vorabversion |
 | [ClassPad v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/download/v1.0.0/physik_hh3_classpad_v1_0_0.zip) | Installation auf dem Taschenrechner |
 | [PC-Vorschau v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/download/v1.0.0/physik_hh3_pc_v1_0_0.zip) | App am PC ausprobieren, ohne ClassPad |
 | [Prüfsummen](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/download/v1.0.0/SHA256SUMS.txt) | SHA256 der ZIPs und des Paketmanifests |
 
-Alle Downloads stehen im [HH3-Release v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v1.0.0).
+Die Python-Pakete stehen weiterhin im [HH3-Release v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v1.0.0).
+Die [native Beta.6](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App-HH3/releases/tag/v2.0.0-beta.6)
+enthält ihr eigenes App-Paket und eigene Prüfsummen.
 
 ## Funktionen
 

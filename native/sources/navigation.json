@@ -1,0 +1,5754 @@
+{
+  "version": 4,
+  "frozen": {
+    "wissen.txt": "4ef9d73f2eb2d33dc50973122d48ce86596234a250d90277452cde915a6b17fb",
+    "bilder.dat": "8fd93e7e62d7e61d85decd1273639dedf607a8bfcb52240ac8ed530ea0a529a3"
+  },
+  "teacher_root": "E:/Leon/01_Schule/Physik/Physik-Ordner",
+  "topics": [
+    {
+      "id": "00",
+      "label": "00 Kinematik",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/00-Kinematik"
+    },
+    {
+      "id": "01",
+      "label": "01 Erhaltungssaetze",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/01-Erhaltungssaetze-Anwendung"
+    },
+    {
+      "id": "02",
+      "label": "02 Kraefte",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/02-Kraefte"
+    },
+    {
+      "id": "03",
+      "label": "03 Bewegung / Wurf",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/03-Bewegung-waagerechter-Wurf"
+    },
+    {
+      "id": "04",
+      "label": "04 Elektrische Felder",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/04-Elektrische-Felder"
+    },
+    {
+      "id": "05",
+      "label": "05 Magnetisches Feld",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/05-Magnetisches-Feld"
+    },
+    {
+      "id": "06",
+      "label": "06 Teilchen in Feldern",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/06-Teilchen-in-Feldern"
+    },
+    {
+      "id": "07",
+      "label": "07 Elektromagn. Induktion",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/07-Elektromagnetische-Induktion"
+    },
+    {
+      "id": "08",
+      "label": "08 Modellbildung / Simulation",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/08-Modellbildung-Simulation"
+    },
+    {
+      "id": "09",
+      "label": "09 Schwingungen",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/09-Schwingungen"
+    },
+    {
+      "id": "10",
+      "label": "10 Wellen",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/10-Wellen"
+    },
+    {
+      "id": "11",
+      "label": "11 Quantenphysik",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/11-Quantenphysik"
+    },
+    {
+      "id": "12",
+      "label": "12 Grundlagen Atomphysik",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/12-Grundlagen-Atomphysik"
+    },
+    {
+      "id": "abi",
+      "label": "Abiturvorbereitung",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/Abiturvorbereitung"
+    },
+    {
+      "id": "other",
+      "label": "Sonstiges",
+      "source_path": "E:/Leon/01_Schule/Physik/Physik-Ordner/sonstiges"
+    }
+  ],
+  "groups": {
+    "overview": {
+      "label": "Ueberblick und Orientierung",
+      "source_files": []
+    },
+    "kinematics": {
+      "label": "Geradlinige Bewegung und Diagramme",
+      "source_files": [
+        "00-Kinematik/\u00dcA_geradlinige Bewegung.pdf",
+        "00-Kinematik/AB_Steigung Fl\u00e4chen von Graphen.pdf"
+      ]
+    },
+    "projectile": {
+      "label": "Fall, Wurf und Begegnung",
+      "source_files": [
+        "03-Bewegung-waagerechter-Wurf/Aufgaben_Wurfbewegungen_Aufgaben.pdf",
+        "03-Bewegung-waagerechter-Wurf/AB_\u00dcberholvorgang.pdf"
+      ]
+    },
+    "energy": {
+      "label": "Energie, Arbeit und Leistung",
+      "source_files": [
+        "01-Erhaltungssaetze-Anwendung/Aufgabe_Energie in Halfpipe mit Reibung.pdf"
+      ]
+    },
+    "momentum": {
+      "label": "Impuls und Stoesse",
+      "source_files": [
+        "01-Erhaltungssaetze-Anwendung/Herleitung Impuls + \u00dcA.pdf"
+      ]
+    },
+    "forces": {
+      "label": "Newton, Reibung und Gewicht",
+      "source_files": [
+        "02-Kraefte/\u00dcA_Kr\u00e4fte_Folien_Aufgaben_Lsg_2025.pdf"
+      ]
+    },
+    "circle": {
+      "label": "Kreisbewegung und Radialkraft",
+      "source_files": [
+        "02-Kraefte/\u00dcA_Kreisbewegung_Folien_Aufgaben_Lsg_2025.pdf"
+      ]
+    },
+    "efield": {
+      "label": "Elektrisches Feld und Coulomb",
+      "source_files": [
+        "04-Elektrische-Felder/AB_elektrische Feldst\u00e4rke.pdf",
+        "04-Elektrische-Felder/AB_\u00dcberlagerung E-Feld.pdf"
+      ]
+    },
+    "capacitor": {
+      "label": "Kondensator und Feldenergie",
+      "source_files": [
+        "04-Elektrische-Felder/IQB_Defibrillatoren (Kondensator).pdf"
+      ]
+    },
+    "rc": {
+      "label": "RC-Laden und Entladen",
+      "source_files": [
+        "08-Modellbildung-Simulation/weitere Materialien/Aufgabe 3.2.a Kondensator Entladekurve.prg"
+      ]
+    },
+    "ohm": {
+      "label": "Strom, Widerstand und elektrische Arbeit",
+      "source_files": [
+        "04-Elektrische-Felder/\u00dcA_E-Feld_Folien_Aufgaben_L\u00f6sungen_25.pdf"
+      ]
+    },
+    "magnetic": {
+      "label": "Magnetfeld, Spule und Ringkern",
+      "source_files": [
+        "05-Magnetisches-Feld/\u00dcA_Folien_B-Feld_2026_mit Lsg.pdf"
+      ]
+    },
+    "particles": {
+      "label": "Lorentzkraft, Teilchenbahnen und Filter",
+      "source_files": [
+        "06-Teilchen-in-Feldern/AB_Bewegung Elektron im B-Feld.pdf",
+        "06-Teilchen-in-Feldern/AB_Massenspektrometer und Geschwindigkeitsfilter.pdf"
+      ]
+    },
+    "accelerator": {
+      "label": "Teilchenbeschleunigung und Zyklotron",
+      "source_files": [
+        "06-Teilchen-in-Feldern/AB_Anwendung Teilchenbeschleuniger.pdf"
+      ]
+    },
+    "relativity": {
+      "label": "Relativitaet und Teilchenenergie",
+      "source_files": [
+        "06-Teilchen-in-Feldern/AB_Anwendung Teilchenbeschleuniger.pdf"
+      ]
+    },
+    "millikan": {
+      "label": "Millikan und Ladungsquantisierung",
+      "source_files": [
+        "06-Teilchen-in-Feldern/IQB Aufgabe_Millikan.pdf"
+      ]
+    },
+    "concepts": {
+      "label": "Elektrische und magnetische Feldkonzepte",
+      "source_files": [
+        "06-Teilchen-in-Feldern/AB_Konzepte_Elektromagnetismus.pdf"
+      ]
+    },
+    "induction": {
+      "label": "Fluss, Induktion und Lenz",
+      "source_files": [
+        "07-Elektromagnetische-Induktion/AB_Induktion Ableitungsregeln.pdf",
+        "07-Elektromagnetische-Induktion/AB_Lenzsche Regel_mit Lsg.pdf"
+      ]
+    },
+    "eddy": {
+      "label": "Wirbelstroeme und Anwendungen",
+      "source_files": [
+        "07-Elektromagnetische-Induktion/AB_Anwendung Wirbelstr\u00f6me.pdf"
+      ]
+    },
+    "selfinduction": {
+      "label": "Selbstinduktion und Spulenenergie",
+      "source_files": [
+        "07-Elektromagnetische-Induktion/\u00dcA_Folien_Induktion_2026.pdf"
+      ]
+    },
+    "transformer": {
+      "label": "Transformator und Wirkungsgrad",
+      "source_files": [
+        "07-Elektromagnetische-Induktion/AB_Transformator.pdf"
+      ]
+    },
+    "ac": {
+      "label": "Wechselstrom, Widerstaende und Zeiger",
+      "source_files": [
+        "07-Elektromagnetische-Induktion/\u00dcA_Folien_WSK_2026.pdf",
+        "07-Elektromagnetische-Induktion/\u00dcA_Folien_Widerst\u00e4nde im WSK_2026.pdf",
+        "09-Schwingungen/\u00dcA_Wechselstromkreis_Aufgaben.png"
+      ]
+    },
+    "lc": {
+      "label": "Elektrische Schwingungen und LC-Kreis",
+      "source_files": [
+        "09-Schwingungen/AB_Schwingkreis_Analogie_Anwendung_\u00dcbungen.pdf"
+      ]
+    },
+    "mechanical": {
+      "label": "Mechanische Schwingungen und Pendel",
+      "source_files": [
+        "09-Schwingungen/\u00dcA1_mechanische Schwingung_2026.pdf"
+      ]
+    },
+    "damping": {
+      "label": "Daempfung, Resonanz und Bandbreite",
+      "source_files": [
+        "09-Schwingungen/Resonanz.pdf"
+      ]
+    },
+    "simulation": {
+      "label": "Modellbildung und numerische Simulation",
+      "source_files": [
+        "08-Modellbildung-Simulation/\u00dcA_Simulation_Abi 2013 C1.pdf",
+        "08-Modellbildung-Simulation/\u00dcA_Simulation_Abi 2014 C2.pdf",
+        "08-Modellbildung-Simulation/\u00dcA_Simulation_Abi 2016 C1.pdf"
+      ]
+    },
+    "measurement": {
+      "label": "Messreihen, Regression und Unsicherheit",
+      "source_files": [
+        "04-Elektrische-Felder/IQB_Coulombregression_Aufgabe.pdf"
+      ]
+    },
+    "units": {
+      "label": "Einheiten und Umrechnungen",
+      "source_files": []
+    },
+    "constants": {
+      "label": "Konstanten und Materialgroessen",
+      "source_files": []
+    },
+    "geometry": {
+      "label": "Geometrie und Flaechen",
+      "source_files": []
+    },
+    "waves": {
+      "label": "Wellen, Brechung und stehende Wellen",
+      "source_files": [
+        "10-Wellen/AB_stehende Wellen.pdf"
+      ]
+    },
+    "diffraction": {
+      "label": "Beugung, Interferenz und Aufloesung",
+      "source_files": [
+        "10-Wellen/AB_Optisches Gitter.pdf",
+        "10-Wellen/AB_Aufl\u00f6sungsverm\u00f6gen optischer Ger\u00e4te.pdf",
+        "11-Quantenphysik/weitere-AB/AB_Wellencharakter von Teilchen.pdf"
+      ]
+    },
+    "polarization": {
+      "label": "Polarisation und Malus",
+      "source_files": [
+        "10-Wellen/AB_Polarisation.pdf"
+      ]
+    },
+    "film": {
+      "label": "Interferenz an duennen Schichten",
+      "source_files": [
+        "10-Wellen/AB_Interferenz an d\u00fcnnen Schichten.pdf"
+      ]
+    },
+    "photons": {
+      "label": "Photonen, Energie und Impuls",
+      "source_files": [
+        "11-Quantenphysik/\u00dcA_Quantenphysik_2026.pdf"
+      ]
+    },
+    "photoelectric": {
+      "label": "Photoeffekt und Planck-Auswertung",
+      "source_files": [
+        "11-Quantenphysik/AB_\u00dcbersicht_Photoeffekt_Aufgabe.pdf",
+        "11-Quantenphysik/Aufgabe_Planksches Wirkungsquantum.pdf"
+      ]
+    },
+    "matter": {
+      "label": "Materiewellen und De Broglie",
+      "source_files": [
+        "11-Quantenphysik/weitere-AB/AB_Wellencharakter von Teilchen.pdf"
+      ]
+    },
+    "quantum": {
+      "label": "Quantenobjekte, Messung und Wahrscheinlichkeit",
+      "source_files": [
+        "11-Quantenphysik/AB_Stationsarbeit_Wesensz\u00fcge der QP.pdf",
+        "11-Quantenphysik/Literatur_Quantenradierer.pdf"
+      ]
+    },
+    "uncertainty": {
+      "label": "Ort-Impuls-Unbestimmtheit",
+      "source_files": [
+        "11-Quantenphysik/weitere-AB/AB_Unbestimmtheitsrelation.pdf"
+      ]
+    },
+    "fourier": {
+      "label": "Wellenpakete, Pulsdauer und Spektralbreite",
+      "source_files": [
+        "11-Quantenphysik/weitere-AB/AB_Unbestimmtheitsrelation mit Anwendung.pdf"
+      ]
+    },
+    "well": {
+      "label": "Potenzialtopf und stehende Quantenzustaende",
+      "source_files": [
+        "12-Grundlagen-Atomphysik/AB_Potenzialtopf.pdf",
+        "12-Grundlagen-Atomphysik/IQB_Potentialtopf.pdf"
+      ]
+    },
+    "atom": {
+      "label": "Atommodelle, Orbitale und Schalen",
+      "source_files": [
+        "12-Grundlagen-Atomphysik/AB_Fr\u00fche Atommodelle.pdf",
+        "12-Grundlagen-Atomphysik/AB_Orbitale.pdf"
+      ]
+    },
+    "spectra": {
+      "label": "Energieniveaus und Spektren",
+      "source_files": [
+        "12-Grundlagen-Atomphysik/Literatur_Bader_Atommodell und Linienspektrum.pdf"
+      ]
+    },
+    "excitation": {
+      "label": "Anregung und Franck-Hertz",
+      "source_files": [
+        "12-Grundlagen-Atomphysik/AB_Franck-Hertz-Versuch.pdf"
+      ]
+    },
+    "luminescence": {
+      "label": "Fluoreszenz und Lumineszenz",
+      "source_files": [
+        "12-Grundlagen-Atomphysik/AB_Fluoreszenz mit L\u00f6sung.pdf"
+      ]
+    },
+    "laser": {
+      "label": "Laser und stimulierte Emission",
+      "source_files": [
+        "12-Grundlagen-Atomphysik/AB_Laser_Aufgabe.pdf"
+      ]
+    },
+    "xray": {
+      "label": "Roentgenstrahlung und Moseley",
+      "source_files": [
+        "12-Grundlagen-Atomphysik/AB_R\u00f6ntgenstrahlung.pdf"
+      ]
+    },
+    "compton": {
+      "label": "Compton-Streuung",
+      "source_files": [
+        "11-Quantenphysik/\u00dcA_Quantenphysik_2026.pdf"
+      ]
+    }
+  },
+  "quantities": {
+    "A": "A - Flaeche",
+    "A_s": "A_s - Schwingungsamplitude",
+    "B": "B - Magnetische Flussdichte",
+    "B_max": "B_max - Flussdichteamplitude",
+    "C": "C - Kapazitaet",
+    "DeltaA": "Delta A - Flaechenaenderung",
+    "DeltaB": "Delta B - Flussdichteaenderung",
+    "DeltaI": "Delta I - Stromaenderung",
+    "DeltaPhi": "Delta Phi - Magnetische Flussaenderung",
+    "phase": "phi / Delta phi - Phase und Phasenverschiebung",
+    "E_field": "E - Elektrische Feldstaerke",
+    "E0": "E_0 - Ruheenergie",
+    "E_cap": "E_C / E_cap - Elektrische Feldenergie",
+    "E_kin": "E_kin - Kinetische Energie",
+    "E_mag": "E_mag - Magnetische Feldenergie",
+    "E_pot": "E_pot - Lageenergie",
+    "F": "F - Kraft",
+    "F_G": "F_G - Gewichts- und Gravitationskraft",
+    "F_L": "F_L - Magnetische Lorentzkraft",
+    "F_R": "F_R - Reibungskraft",
+    "F_el": "F_el - Elektrische Kraft",
+    "F_r": "F_r / F_z - Radialkraft",
+    "H": "H - Magnetische Feldstaerke",
+    "I": "I - Stromstaerke",
+    "I0": "I_0 / I_max - Stromamplitude",
+    "I1": "I_1 - Primaerstrom / Leiterstrom 1",
+    "I2": "I_2 - Sekundaerstrom / Leiterstrom 2",
+    "I_eff": "I_eff - Effektivstrom",
+    "L": "L - Induktivitaet",
+    "N": "N - Windungszahl",
+    "N1": "N_1 - Primaerwindungszahl",
+    "N2": "N_2 - Sekundaerwindungszahl",
+    "P": "P - Leistung",
+    "P_V": "P_V - Verlustleistung",
+    "Phi": "Phi - Magnetischer Fluss",
+    "Phi_E": "Phi_E - Elektrischer Fluss",
+    "Q_charge": "Q / q - Elektrische Ladung",
+    "Q_blind": "Q_blind - Blindleistung",
+    "R": "R - Ohmscher Widerstand",
+    "S": "S - Scheinleistung",
+    "T": "T - Periodendauer",
+    "U": "U - Elektrische Spannung",
+    "U0": "U_0 / U_max - Spannungsamplitude",
+    "U1": "U_1 - Primaerspannung",
+    "U2": "U_2 - Sekundaerspannung",
+    "U_eff": "U_eff - Effektivspannung",
+    "U_ind": "U_ind - Induktionsspannung",
+    "W": "W - Mechanische Arbeit",
+    "W_el": "W_el - Elektrische Arbeit",
+    "X_C": "X_C - Kapazitiver Blindwiderstand",
+    "X_L": "X_L - Induktiver Blindwiderstand",
+    "Z": "Z - Impedanz",
+    "a": "a - Beschleunigung",
+    "a_max": "a_max - Maximalbeschleunigung",
+    "a_r": "a_r / a_z - Radialbeschleunigung",
+    "beta": "beta - Geschwindigkeit relativ zu c",
+    "cos_phi": "cos phi - Leistungsfaktor",
+    "eps0": "epsilon_0 - Elektrische Feldkonstante",
+    "eps_r": "epsilon_r - Relative Permittivitaet",
+    "eta": "eta - Wirkungsgrad",
+    "f": "f - Frequenz",
+    "f0": "f_0 - Eigen- und Resonanzfrequenz",
+    "g": "g - Fallbeschleunigung",
+    "gamma": "gamma - Lorentzfaktor",
+    "h_height": "h - Hoehe",
+    "l": "l - Laenge",
+    "l_Draht": "l_Draht - Drahtlaenge",
+    "m": "m - Masse",
+    "mu0": "mu_0 - Magnetische Feldkonstante",
+    "mu_r": "mu_r - Relative Permeabilitaet",
+    "omega": "omega - Kreisfrequenz",
+    "omega0": "omega_0 - Eigenkreisfrequenz",
+    "p": "p - Impuls",
+    "q_m": "q/m - Spezifische Ladung",
+    "r": "r - Radius",
+    "rho_el": "rho_el - Spezifischer elektrischer Widerstand",
+    "rho_probability": "rho = |psi|^2 - Wahrscheinlichkeitsdichte",
+    "rho_mass": "rho_m - Massendichte",
+    "sin_phi": "sin phi - Blindleistungsfaktor",
+    "tau": "tau - Zeitkonstante",
+    "lifetime": "tau - Lebensdauer",
+    "v": "v - Geschwindigkeit",
+    "v_max": "v_max - Maximalgeschwindigkeit",
+    "v_filter": "v_Filter - Wien-Filter-Geschwindigkeit",
+    "E_ph": "E_ph - Photonenergie",
+    "lambda": "lambda - Wellenlaenge",
+    "p_ph": "p_ph - Photonimpuls",
+    "N_ph": "N_ph - Photonenzahl",
+    "E_ges": "E_ges - Gesamtenergie",
+    "t": "t - Zeit",
+    "U_G": "U_G - Gegen- und Stoppspannung",
+    "W_A": "W_A - Austrittsarbeit",
+    "f_G": "f_G - Grenzfrequenz",
+    "lambda_G": "lambda_G - Grenzwellenlaenge",
+    "theta": "theta - Bragg-Glanzwinkel",
+    "delta_x": "delta x - Interferenz-Streifenabstand",
+    "D_screen": "D - Schirmabstand",
+    "sigma_p": "sigma_p - Impuls-Standardabweichung",
+    "sigma_x": "sigma_x - Orts-Standardabweichung",
+    "sigma_v": "sigma_v - Geschwindigkeits-Standardabweichung",
+    "sigma_f": "sigma_f - Frequenz-Standardabweichung",
+    "sigma_t": "sigma_t - Zeit-Standardabweichung",
+    "df_FWHM": "df_FWHM - Frequenz-Halbwertsbreite",
+    "dt_FWHM": "dt_FWHM - Zeit-Halbwertsbreite",
+    "Delta_f": "Delta f - Frequenzbreite / Bandbreite",
+    "Delta_t": "Delta t - Zeitbreite",
+    "Gamma": "Gamma - Natuerliche Energie-Linienbreite",
+    "lambda_n": "lambda_n - Stehende Materiewellenlaenge",
+    "p_n": "p_n - Impulsbetrag im Potenzialtopf",
+    "E_n": "E_n - Energieniveau",
+    "Delta_E": "Delta E - Uebergangsenergie",
+    "lambda_ph": "lambda_ph - Uebergangsphoton-Wellenlaenge",
+    "E_ion": "E_ion - Ionisationsenergie",
+    "r_n": "r_n - Bohr-Modellradius",
+    "E_anreg": "E_anreg - Anregungsenergie",
+    "Delta_U": "Delta U - Anregungs-Spannungsabstand",
+    "lambda_min": "lambda_min - Roentgen-Grenzwellenlaenge",
+    "Delta_lambda": "Delta lambda - Compton-Wellenlaengenaenderung",
+    "lambda_s": "lambda_s - Gestreute Wellenlaenge",
+    "P_Ort": "P_Ort - Ortswahrscheinlichkeit",
+    "psi_n": "psi_n - Topf-Wellenfunktion",
+    "N_Schale": "N_Schale - Maximale Schalenbesetzung",
+    "h_P": "h_P - Plancksches Wirkungsquantum",
+    "U_C": "U_C - Kondensatorspannung",
+    "P_R": "P_R - Verlustleistung am Widerstand",
+    "Q_quality": "Q_Guete - Schwingkreisguete",
+    "x": "x - Ort und Auslenkung",
+    "F_D": "F_D - Feder-Rueckstellkraft",
+    "D_spring": "D_Feder - Federkonstante",
+    "E_sp": "E_sp - Spannenergie",
+    "a_distance": "a - Leiterabstand",
+    "well_width": "a_Topf - Potenzialtopfbreite",
+    "alpha": "alpha / theta - Winkel",
+    "mu_friction": "mu - Reibungskoeffizient",
+    "n_optical": "n - Brechungsindex",
+    "k_order": "k / n - Beugungsordnung",
+    "I_light": "I_Licht - Lichtintensitaet",
+    "measurements": "x_i / y_i - Messreihen und Auswertung",
+    "diameter": "d - Durchmesser",
+    "plate_gap": "d_Platten - Plattenabstand",
+    "crystal_gap": "d_Netz - Netzebenenabstand",
+    "slit_gap": "d_Spalt - Spaltmittenabstand"
+  },
+  "articles": {
+    "legacy:0": {
+      "topics": [
+        "other"
+      ],
+      "group": "overview",
+      "quantities": []
+    },
+    "legacy:1": {
+      "topics": [
+        "01",
+        "00",
+        "02",
+        "03"
+      ],
+      "group": "energy",
+      "quantities": []
+    },
+    "legacy:2": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:3": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:4": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:5": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:6": {
+      "topics": [
+        "09",
+        "01"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:7": {
+      "label": "Mechanische Daempfung und Resonanz (Grundlagen)",
+      "topics": [
+        "09"
+      ],
+      "group": "damping",
+      "quantities": []
+    },
+    "legacy:8": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:9": {
+      "topics": [
+        "04",
+        "06",
+        "other"
+      ],
+      "group": "capacitor",
+      "quantities": []
+    },
+    "legacy:10": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:11": {
+      "topics": [
+        "06",
+        "04"
+      ],
+      "group": "accelerator",
+      "quantities": []
+    },
+    "legacy:12": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:13": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:14": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:15": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:16": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:17": {
+      "topics": [
+        "07"
+      ],
+      "group": "eddy",
+      "quantities": []
+    },
+    "legacy:18": {
+      "topics": [
+        "07"
+      ],
+      "group": "eddy",
+      "quantities": []
+    },
+    "legacy:19": {
+      "topics": [
+        "07",
+        "05"
+      ],
+      "group": "selfinduction",
+      "quantities": []
+    },
+    "legacy:20": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": []
+    },
+    "legacy:21": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": []
+    },
+    "legacy:22": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:23": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:24": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:25": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:26": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:27": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:28": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:29": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:30": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:31": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:32": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:33": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "damping",
+      "quantities": []
+    },
+    "legacy:34": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "damping",
+      "quantities": []
+    },
+    "legacy:35": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "damping",
+      "quantities": []
+    },
+    "legacy:36": {
+      "topics": [
+        "06",
+        "04",
+        "05",
+        "other"
+      ],
+      "group": "concepts",
+      "quantities": []
+    },
+    "legacy:37": {
+      "topics": [
+        "other",
+        "08"
+      ],
+      "group": "measurement",
+      "quantities": []
+    },
+    "legacy:38": {
+      "topics": [
+        "other"
+      ],
+      "group": "units",
+      "quantities": []
+    },
+    "legacy:39": {
+      "topics": [
+        "other"
+      ],
+      "group": "overview",
+      "quantities": []
+    },
+    "legacy:40": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:41": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:42": {
+      "topics": [
+        "05",
+        "07",
+        "other"
+      ],
+      "group": "magnetic",
+      "quantities": []
+    },
+    "legacy:43": {
+      "topics": [
+        "05",
+        "07",
+        "other"
+      ],
+      "group": "magnetic",
+      "quantities": []
+    },
+    "legacy:44": {
+      "topics": [
+        "07",
+        "other"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:45": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:46": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:47": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:48": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:49": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:50": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:51": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:52": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:53": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:54": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:55": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": []
+    },
+    "legacy:56": {
+      "topics": [
+        "07",
+        "05"
+      ],
+      "group": "selfinduction",
+      "quantities": []
+    },
+    "legacy:57": {
+      "topics": [
+        "07",
+        "05"
+      ],
+      "group": "selfinduction",
+      "quantities": []
+    },
+    "legacy:58": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:59": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:60": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:61": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:62": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:63": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:64": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:65": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:66": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:67": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:68": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:69": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:70": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:71": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "damping",
+      "quantities": []
+    },
+    "legacy:72": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": []
+    },
+    "legacy:73": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": []
+    },
+    "legacy:74": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": []
+    },
+    "legacy:75": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": []
+    },
+    "legacy:76": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": []
+    },
+    "legacy:77": {
+      "topics": [
+        "01"
+      ],
+      "group": "momentum",
+      "quantities": []
+    },
+    "legacy:78": {
+      "topics": [
+        "02"
+      ],
+      "group": "forces",
+      "quantities": []
+    },
+    "legacy:79": {
+      "topics": [
+        "00"
+      ],
+      "group": "kinematics",
+      "quantities": []
+    },
+    "legacy:80": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:81": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:82": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:83": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:84": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": []
+    },
+    "legacy:85": {
+      "topics": [
+        "04",
+        "06",
+        "other"
+      ],
+      "group": "efield",
+      "quantities": []
+    },
+    "legacy:86": {
+      "topics": [
+        "04",
+        "06",
+        "other"
+      ],
+      "group": "efield",
+      "quantities": []
+    },
+    "legacy:87": {
+      "topics": [
+        "04",
+        "other"
+      ],
+      "group": "capacitor",
+      "quantities": []
+    },
+    "legacy:88": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:89": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:90": {
+      "topics": [
+        "04",
+        "06",
+        "other"
+      ],
+      "group": "efield",
+      "quantities": []
+    },
+    "legacy:91": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:92": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:93": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:94": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:95": {
+      "topics": [
+        "06",
+        "other"
+      ],
+      "group": "relativity",
+      "quantities": []
+    },
+    "legacy:96": {
+      "topics": [
+        "06",
+        "other"
+      ],
+      "group": "relativity",
+      "quantities": []
+    },
+    "legacy:97": {
+      "topics": [
+        "06",
+        "other"
+      ],
+      "group": "relativity",
+      "quantities": []
+    },
+    "legacy:98": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:99": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": []
+    },
+    "legacy:100": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:101": {
+      "topics": [
+        "05",
+        "07",
+        "other"
+      ],
+      "group": "magnetic",
+      "quantities": []
+    },
+    "legacy:102": {
+      "topics": [
+        "other"
+      ],
+      "group": "constants",
+      "quantities": []
+    },
+    "legacy:103": {
+      "topics": [
+        "07",
+        "other"
+      ],
+      "group": "transformer",
+      "quantities": []
+    },
+    "legacy:104": {
+      "topics": [
+        "06",
+        "other"
+      ],
+      "group": "relativity",
+      "quantities": []
+    },
+    "legacy:105": {
+      "topics": [
+        "06",
+        "other"
+      ],
+      "group": "relativity",
+      "quantities": []
+    },
+    "legacy:106": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:107": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:108": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:109": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:110": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": []
+    },
+    "legacy:111": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:112": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:113": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": []
+    },
+    "legacy:114": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": []
+    },
+    "legacy:115": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": []
+    },
+    "legacy:116": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": []
+    },
+    "legacy:117": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": []
+    },
+    "legacy:118": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": []
+    },
+    "legacy:119": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "compton",
+      "quantities": []
+    },
+    "legacy:120": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": []
+    },
+    "legacy:121": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": []
+    },
+    "legacy:122": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": []
+    },
+    "legacy:123": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": []
+    },
+    "legacy:124": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "quantum",
+      "quantities": []
+    },
+    "legacy:125": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "quantum",
+      "quantities": []
+    },
+    "legacy:126": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "quantum",
+      "quantities": []
+    },
+    "legacy:127": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "quantum",
+      "quantities": []
+    },
+    "legacy:128": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "quantum",
+      "quantities": []
+    },
+    "legacy:129": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "quantum",
+      "quantities": []
+    },
+    "legacy:130": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "uncertainty",
+      "quantities": []
+    },
+    "legacy:131": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "fourier",
+      "quantities": []
+    },
+    "legacy:132": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "fourier",
+      "quantities": []
+    },
+    "legacy:133": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": []
+    },
+    "legacy:134": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": []
+    },
+    "legacy:135": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": []
+    },
+    "legacy:136": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": []
+    },
+    "legacy:137": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "atom",
+      "quantities": []
+    },
+    "legacy:138": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "atom",
+      "quantities": []
+    },
+    "legacy:139": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "atom",
+      "quantities": []
+    },
+    "legacy:140": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "atom",
+      "quantities": []
+    },
+    "legacy:141": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": []
+    },
+    "legacy:142": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "excitation",
+      "quantities": []
+    },
+    "legacy:143": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "luminescence",
+      "quantities": []
+    },
+    "legacy:144": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "laser",
+      "quantities": []
+    },
+    "legacy:145": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "xray",
+      "quantities": []
+    },
+    "legacy:146": {
+      "topics": [
+        "07",
+        "05"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "A"
+      ]
+    },
+    "legacy:147": {
+      "topics": [
+        "other"
+      ],
+      "group": "geometry",
+      "quantities": [
+        "A"
+      ]
+    },
+    "legacy:148": {
+      "topics": [
+        "other"
+      ],
+      "group": "geometry",
+      "quantities": [
+        "A"
+      ]
+    },
+    "legacy:149": {
+      "topics": [
+        "other"
+      ],
+      "group": "geometry",
+      "quantities": [
+        "A"
+      ]
+    },
+    "legacy:150": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "A"
+      ]
+    },
+    "legacy:151": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "A_s"
+      ]
+    },
+    "legacy:152": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "A_s"
+      ]
+    },
+    "legacy:153": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "B"
+      ]
+    },
+    "legacy:154": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "B"
+      ]
+    },
+    "legacy:155": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "B"
+      ]
+    },
+    "legacy:156": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": [
+        "B"
+      ]
+    },
+    "legacy:157": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "B"
+      ]
+    },
+    "legacy:158": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "B"
+      ]
+    },
+    "legacy:159": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "B_max"
+      ]
+    },
+    "legacy:160": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "B_max"
+      ]
+    },
+    "legacy:161": {
+      "topics": [
+        "07",
+        "04",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "C"
+      ]
+    },
+    "legacy:162": {
+      "topics": [
+        "09",
+        "04",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "C"
+      ]
+    },
+    "legacy:163": {
+      "topics": [
+        "09",
+        "07",
+        "04"
+      ],
+      "group": "lc",
+      "quantities": [
+        "C"
+      ]
+    },
+    "legacy:164": {
+      "topics": [
+        "04"
+      ],
+      "group": "capacitor",
+      "quantities": [
+        "C"
+      ]
+    },
+    "legacy:165": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "DeltaA"
+      ]
+    },
+    "legacy:166": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "DeltaA"
+      ]
+    },
+    "legacy:167": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "DeltaB"
+      ]
+    },
+    "legacy:168": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "DeltaB"
+      ]
+    },
+    "legacy:169": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "DeltaI"
+      ]
+    },
+    "legacy:170": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "DeltaI"
+      ]
+    },
+    "legacy:171": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "DeltaPhi"
+      ]
+    },
+    "legacy:172": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "DeltaPhi"
+      ]
+    },
+    "legacy:173": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "phase"
+      ]
+    },
+    "legacy:174": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "phase"
+      ]
+    },
+    "legacy:175": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "phase"
+      ]
+    },
+    "legacy:176": {
+      "topics": [
+        "04",
+        "06"
+      ],
+      "group": "efield",
+      "quantities": [
+        "E_field"
+      ]
+    },
+    "legacy:177": {
+      "topics": [
+        "04",
+        "06"
+      ],
+      "group": "efield",
+      "quantities": [
+        "E_field"
+      ]
+    },
+    "legacy:178": {
+      "topics": [
+        "06"
+      ],
+      "group": "relativity",
+      "quantities": [
+        "E0"
+      ]
+    },
+    "legacy:179": {
+      "topics": [
+        "06"
+      ],
+      "group": "relativity",
+      "quantities": [
+        "E0"
+      ]
+    },
+    "legacy:180": {
+      "topics": [
+        "04"
+      ],
+      "group": "capacitor",
+      "quantities": [
+        "E_cap"
+      ]
+    },
+    "legacy:181": {
+      "topics": [
+        "04"
+      ],
+      "group": "capacitor",
+      "quantities": [
+        "E_cap"
+      ]
+    },
+    "legacy:182": {
+      "topics": [
+        "04"
+      ],
+      "group": "capacitor",
+      "quantities": [
+        "E_cap"
+      ]
+    },
+    "legacy:183": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:184": {
+      "topics": [
+        "06",
+        "04"
+      ],
+      "group": "accelerator",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:185": {
+      "topics": [
+        "06"
+      ],
+      "group": "relativity",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:186": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:187": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:188": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:189": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:190": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:191": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:192": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "E_mag"
+      ]
+    },
+    "legacy:193": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "E_mag"
+      ]
+    },
+    "legacy:194": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "E_mag"
+      ]
+    },
+    "legacy:195": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": [
+        "E_pot"
+      ]
+    },
+    "legacy:196": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": [
+        "E_pot"
+      ]
+    },
+    "legacy:197": {
+      "topics": [
+        "02",
+        "08"
+      ],
+      "group": "forces",
+      "quantities": [
+        "F"
+      ]
+    },
+    "legacy:198": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "F"
+      ]
+    },
+    "legacy:199": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "F"
+      ]
+    },
+    "legacy:200": {
+      "topics": [
+        "02"
+      ],
+      "group": "forces",
+      "quantities": [
+        "F_G"
+      ]
+    },
+    "legacy:201": {
+      "topics": [
+        "02"
+      ],
+      "group": "forces",
+      "quantities": [
+        "F_G"
+      ]
+    },
+    "legacy:202": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": [
+        "F_L"
+      ]
+    },
+    "legacy:203": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "F_L"
+      ]
+    },
+    "legacy:204": {
+      "topics": [
+        "02",
+        "08"
+      ],
+      "group": "forces",
+      "quantities": [
+        "F_R"
+      ]
+    },
+    "legacy:205": {
+      "topics": [
+        "02"
+      ],
+      "group": "forces",
+      "quantities": [
+        "F_R"
+      ]
+    },
+    "legacy:206": {
+      "topics": [
+        "04",
+        "06"
+      ],
+      "group": "efield",
+      "quantities": [
+        "F_el"
+      ]
+    },
+    "legacy:207": {
+      "topics": [
+        "04",
+        "06"
+      ],
+      "group": "efield",
+      "quantities": [
+        "F_el"
+      ]
+    },
+    "legacy:208": {
+      "topics": [
+        "02",
+        "03"
+      ],
+      "group": "circle",
+      "quantities": [
+        "F_r"
+      ]
+    },
+    "legacy:209": {
+      "topics": [
+        "02",
+        "03"
+      ],
+      "group": "circle",
+      "quantities": [
+        "F_r"
+      ]
+    },
+    "legacy:210": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "H"
+      ]
+    },
+    "legacy:211": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "H"
+      ]
+    },
+    "legacy:212": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "H"
+      ]
+    },
+    "legacy:213": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:214": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:215": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:216": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:217": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:218": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:219": {
+      "label": "I_eff - Effektivstrom aus Wechselstromkreis",
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "I_eff"
+      ]
+    },
+    "legacy:220": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:221": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:222": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:223": {
+      "topics": [
+        "07",
+        "04",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "I0"
+      ]
+    },
+    "legacy:224": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "I0"
+      ]
+    },
+    "legacy:225": {
+      "topics": [
+        "07",
+        "04",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "I0"
+      ]
+    },
+    "legacy:226": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "I1"
+      ]
+    },
+    "legacy:227": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "I1"
+      ]
+    },
+    "legacy:228": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "I2"
+      ]
+    },
+    "legacy:229": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "I2"
+      ]
+    },
+    "legacy:230": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "I2"
+      ]
+    },
+    "legacy:231": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "I_eff"
+      ]
+    },
+    "legacy:232": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "I_eff"
+      ]
+    },
+    "legacy:233": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "I_eff"
+      ]
+    },
+    "legacy:234": {
+      "topics": [
+        "07",
+        "05"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "L"
+      ]
+    },
+    "legacy:235": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "L"
+      ]
+    },
+    "legacy:236": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "L"
+      ]
+    },
+    "legacy:237": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "L"
+      ]
+    },
+    "legacy:238": {
+      "topics": [
+        "09",
+        "07",
+        "04"
+      ],
+      "group": "lc",
+      "quantities": [
+        "L"
+      ]
+    },
+    "legacy:239": {
+      "topics": [
+        "09",
+        "07",
+        "04"
+      ],
+      "group": "lc",
+      "quantities": [
+        "L"
+      ]
+    },
+    "legacy:240": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "N"
+      ]
+    },
+    "legacy:241": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "N"
+      ]
+    },
+    "legacy:242": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "N"
+      ]
+    },
+    "legacy:243": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "N"
+      ]
+    },
+    "legacy:244": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "N1"
+      ]
+    },
+    "legacy:245": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "N1"
+      ]
+    },
+    "legacy:246": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "N2"
+      ]
+    },
+    "legacy:247": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "N2"
+      ]
+    },
+    "legacy:248": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "P"
+      ]
+    },
+    "legacy:249": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "P"
+      ]
+    },
+    "legacy:250": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "P"
+      ]
+    },
+    "legacy:251": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "P"
+      ]
+    },
+    "legacy:252": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "P"
+      ]
+    },
+    "legacy:253": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "P_V"
+      ]
+    },
+    "legacy:254": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "P_V"
+      ]
+    },
+    "legacy:255": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "P_V"
+      ]
+    },
+    "legacy:256": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "Phi"
+      ]
+    },
+    "legacy:257": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "Phi"
+      ]
+    },
+    "legacy:258": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "Phi"
+      ]
+    },
+    "legacy:259": {
+      "topics": [
+        "04"
+      ],
+      "group": "efield",
+      "quantities": [
+        "Phi_E"
+      ]
+    },
+    "legacy:260": {
+      "topics": [
+        "04"
+      ],
+      "group": "efield",
+      "quantities": [
+        "Phi_E"
+      ]
+    },
+    "legacy:261": {
+      "topics": [
+        "04"
+      ],
+      "group": "capacitor",
+      "quantities": [
+        "Q_charge"
+      ]
+    },
+    "legacy:262": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "Q_charge"
+      ]
+    },
+    "legacy:263": {
+      "topics": [
+        "04"
+      ],
+      "group": "efield",
+      "quantities": [
+        "Q_charge"
+      ]
+    },
+    "legacy:264": {
+      "topics": [
+        "07",
+        "04",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "Q_blind"
+      ]
+    },
+    "legacy:265": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "Q_blind"
+      ]
+    },
+    "legacy:266": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "Q_blind"
+      ]
+    },
+    "legacy:267": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "Q_blind"
+      ]
+    },
+    "legacy:268": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "Q_blind"
+      ]
+    },
+    "legacy:269": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "R"
+      ]
+    },
+    "legacy:270": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "R"
+      ]
+    },
+    "legacy:271": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "R"
+      ]
+    },
+    "legacy:272": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "R"
+      ]
+    },
+    "legacy:273": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "R"
+      ]
+    },
+    "legacy:274": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "R"
+      ]
+    },
+    "legacy:275": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "S"
+      ]
+    },
+    "legacy:276": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "S"
+      ]
+    },
+    "legacy:277": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:278": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:279": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:280": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:281": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:282": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "U"
+      ]
+    },
+    "legacy:283": {
+      "topics": [
+        "04",
+        "06"
+      ],
+      "group": "efield",
+      "quantities": [
+        "U"
+      ]
+    },
+    "legacy:284": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "U"
+      ]
+    },
+    "legacy:285": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "xray",
+      "quantities": [
+        "U"
+      ]
+    },
+    "legacy:286": {
+      "topics": [
+        "07",
+        "04",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "U0"
+      ]
+    },
+    "legacy:287": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "U0"
+      ]
+    },
+    "legacy:288": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "U1"
+      ]
+    },
+    "legacy:289": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "U1"
+      ]
+    },
+    "legacy:290": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "U2"
+      ]
+    },
+    "legacy:291": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "U2"
+      ]
+    },
+    "legacy:292": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "U_eff"
+      ]
+    },
+    "legacy:293": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "U_eff"
+      ]
+    },
+    "legacy:294": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "U_eff"
+      ]
+    },
+    "legacy:295": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:296": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:297": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:298": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:299": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:300": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:301": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:302": {
+      "topics": [
+        "07"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:303": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:304": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind"
+      ]
+    },
+    "legacy:305": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "U0"
+      ]
+    },
+    "legacy:306": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U0"
+      ]
+    },
+    "legacy:307": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": [
+        "W"
+      ]
+    },
+    "legacy:308": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": [
+        "W"
+      ]
+    },
+    "legacy:309": {
+      "topics": [
+        "04",
+        "06"
+      ],
+      "group": "capacitor",
+      "quantities": [
+        "W_el"
+      ]
+    },
+    "legacy:310": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "W_el"
+      ]
+    },
+    "legacy:311": {
+      "topics": [
+        "07",
+        "04",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "X_C"
+      ]
+    },
+    "legacy:312": {
+      "topics": [
+        "07",
+        "04",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "X_C"
+      ]
+    },
+    "legacy:313": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "X_L"
+      ]
+    },
+    "legacy:314": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "X_L"
+      ]
+    },
+    "legacy:315": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "Z"
+      ]
+    },
+    "legacy:316": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "Z"
+      ]
+    },
+    "legacy:317": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "Z"
+      ]
+    },
+    "legacy:318": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "a_distance"
+      ]
+    },
+    "legacy:319": {
+      "topics": [
+        "02",
+        "08"
+      ],
+      "group": "forces",
+      "quantities": [
+        "a"
+      ]
+    },
+    "legacy:320": {
+      "topics": [
+        "00",
+        "08"
+      ],
+      "group": "kinematics",
+      "quantities": [
+        "a"
+      ]
+    },
+    "legacy:321": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": [
+        "well_width"
+      ]
+    },
+    "legacy:322": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "a_max"
+      ]
+    },
+    "legacy:323": {
+      "topics": [
+        "02",
+        "03"
+      ],
+      "group": "circle",
+      "quantities": [
+        "a_r"
+      ]
+    },
+    "legacy:324": {
+      "topics": [
+        "02",
+        "03"
+      ],
+      "group": "circle",
+      "quantities": [
+        "a_r"
+      ]
+    },
+    "legacy:325": {
+      "topics": [
+        "06"
+      ],
+      "group": "relativity",
+      "quantities": [
+        "beta"
+      ]
+    },
+    "legacy:326": {
+      "topics": [
+        "06"
+      ],
+      "group": "relativity",
+      "quantities": [
+        "beta"
+      ]
+    },
+    "legacy:327": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "cos_phi"
+      ]
+    },
+    "legacy:328": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "cos_phi"
+      ]
+    },
+    "legacy:329": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "cos_phi"
+      ]
+    },
+    "legacy:330": {
+      "topics": [
+        "other"
+      ],
+      "group": "geometry",
+      "quantities": [
+        "diameter"
+      ]
+    },
+    "legacy:331": {
+      "topics": [
+        "other"
+      ],
+      "group": "geometry",
+      "quantities": [
+        "diameter"
+      ]
+    },
+    "legacy:332": {
+      "topics": [
+        "04",
+        "06"
+      ],
+      "group": "efield",
+      "quantities": [
+        "plate_gap"
+      ]
+    },
+    "legacy:333": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "crystal_gap"
+      ]
+    },
+    "legacy:334": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "slit_gap"
+      ]
+    },
+    "legacy:335": {
+      "topics": [
+        "04",
+        "other"
+      ],
+      "group": "constants",
+      "quantities": [
+        "eps0"
+      ]
+    },
+    "legacy:336": {
+      "topics": [
+        "04"
+      ],
+      "group": "capacitor",
+      "quantities": [
+        "eps_r"
+      ]
+    },
+    "legacy:337": {
+      "topics": [
+        "04"
+      ],
+      "group": "efield",
+      "quantities": [
+        "eps_r"
+      ]
+    },
+    "legacy:338": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "eta"
+      ]
+    },
+    "legacy:339": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "eta"
+      ]
+    },
+    "legacy:340": {
+      "topics": [
+        "07"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "eta"
+      ]
+    },
+    "legacy:341": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:342": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:343": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:344": {
+      "topics": [
+        "07",
+        "04",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:345": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:346": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:347": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:348": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:349": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:350": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "f0"
+      ]
+    },
+    "legacy:351": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "f0"
+      ]
+    },
+    "legacy:352": {
+      "topics": [
+        "09",
+        "03"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "g"
+      ]
+    },
+    "legacy:353": {
+      "topics": [
+        "06"
+      ],
+      "group": "relativity",
+      "quantities": [
+        "gamma"
+      ]
+    },
+    "legacy:354": {
+      "topics": [
+        "other"
+      ],
+      "group": "relativity",
+      "quantities": [
+        "gamma"
+      ]
+    },
+    "legacy:355": {
+      "topics": [
+        "03",
+        "00"
+      ],
+      "group": "projectile",
+      "quantities": [
+        "h_height"
+      ]
+    },
+    "legacy:356": {
+      "topics": [
+        "01"
+      ],
+      "group": "energy",
+      "quantities": [
+        "h_height"
+      ]
+    },
+    "legacy:357": {
+      "topics": [
+        "03",
+        "00",
+        "08"
+      ],
+      "group": "projectile",
+      "quantities": [
+        "h_height"
+      ]
+    },
+    "legacy:358": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "l"
+      ]
+    },
+    "legacy:359": {
+      "topics": [
+        "05"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "l"
+      ]
+    },
+    "legacy:360": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "l"
+      ]
+    },
+    "legacy:361": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "l"
+      ]
+    },
+    "legacy:362": {
+      "topics": [
+        "07",
+        "05"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "l"
+      ]
+    },
+    "legacy:363": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "l"
+      ]
+    },
+    "legacy:364": {
+      "topics": [
+        "10",
+        "abi"
+      ],
+      "group": "waves",
+      "quantities": [
+        "lambda"
+      ],
+      "label": "lambda - Wellenlaenge aus Wellengeschwindigkeit"
+    },
+    "legacy:365": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "l"
+      ]
+    },
+    "legacy:366": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "l_Draht"
+      ]
+    },
+    "legacy:367": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "l_Draht"
+      ]
+    },
+    "legacy:368": {
+      "topics": [
+        "06",
+        "05"
+      ],
+      "group": "particles",
+      "quantities": [
+        "m"
+      ]
+    },
+    "legacy:369": {
+      "topics": [
+        "06",
+        "05"
+      ],
+      "group": "particles",
+      "quantities": [
+        "m"
+      ]
+    },
+    "legacy:370": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "m"
+      ]
+    },
+    "legacy:371": {
+      "topics": [
+        "05",
+        "07",
+        "other"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "mu0"
+      ]
+    },
+    "legacy:372": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "mu_r"
+      ]
+    },
+    "legacy:373": {
+      "topics": [
+        "07",
+        "05"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "mu_r"
+      ]
+    },
+    "legacy:374": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "mu_r"
+      ]
+    },
+    "legacy:375": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "omega"
+      ]
+    },
+    "legacy:376": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "omega"
+      ]
+    },
+    "legacy:377": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "omega0"
+      ]
+    },
+    "legacy:378": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "omega"
+      ]
+    },
+    "legacy:379": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "omega"
+      ]
+    },
+    "legacy:380": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "omega"
+      ]
+    },
+    "legacy:381": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "omega"
+      ]
+    },
+    "legacy:382": {
+      "topics": [
+        "01"
+      ],
+      "group": "momentum",
+      "quantities": [
+        "p"
+      ]
+    },
+    "legacy:383": {
+      "topics": [
+        "01"
+      ],
+      "group": "momentum",
+      "quantities": [
+        "p"
+      ]
+    },
+    "legacy:384": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "p"
+      ]
+    },
+    "legacy:385": {
+      "topics": [
+        "06",
+        "05"
+      ],
+      "group": "particles",
+      "quantities": [
+        "q_m"
+      ]
+    },
+    "legacy:386": {
+      "topics": [
+        "06",
+        "05"
+      ],
+      "group": "particles",
+      "quantities": [
+        "q_m"
+      ]
+    },
+    "legacy:387": {
+      "topics": [
+        "06",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": [
+        "r"
+      ]
+    },
+    "legacy:388": {
+      "topics": [
+        "other"
+      ],
+      "group": "geometry",
+      "quantities": [
+        "r"
+      ]
+    },
+    "legacy:389": {
+      "topics": [
+        "05",
+        "07"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "r"
+      ]
+    },
+    "legacy:390": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "r"
+      ]
+    },
+    "legacy:391": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "rho_el"
+      ]
+    },
+    "legacy:392": {
+      "topics": [
+        "04"
+      ],
+      "group": "ohm",
+      "quantities": [
+        "rho_el"
+      ]
+    },
+    "legacy:393": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "quantum",
+      "quantities": [
+        "rho_probability"
+      ]
+    },
+    "legacy:394": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "sin_phi"
+      ]
+    },
+    "legacy:395": {
+      "topics": [
+        "07",
+        "08"
+      ],
+      "group": "selfinduction",
+      "quantities": [
+        "tau"
+      ]
+    },
+    "legacy:396": {
+      "topics": [
+        "04",
+        "08"
+      ],
+      "group": "rc",
+      "quantities": [
+        "tau"
+      ]
+    },
+    "legacy:397": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "lifetime"
+      ]
+    },
+    "legacy:398": {
+      "topics": [
+        "06",
+        "05"
+      ],
+      "group": "particles",
+      "quantities": [
+        "v"
+      ]
+    },
+    "legacy:399": {
+      "topics": [
+        "06",
+        "04",
+        "08",
+        "other"
+      ],
+      "group": "accelerator",
+      "quantities": [
+        "v"
+      ]
+    },
+    "legacy:400": {
+      "topics": [
+        "03",
+        "00",
+        "08"
+      ],
+      "group": "projectile",
+      "quantities": [
+        "v"
+      ]
+    },
+    "legacy:401": {
+      "topics": [
+        "07"
+      ],
+      "group": "induction",
+      "quantities": [
+        "v"
+      ]
+    },
+    "legacy:402": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "v"
+      ]
+    },
+    "legacy:403": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "v_max"
+      ]
+    },
+    "legacy:404": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "v_max"
+      ]
+    },
+    "legacy:405": {
+      "topics": [
+        "06",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": [
+        "v_filter"
+      ]
+    },
+    "legacy:406": {
+      "topics": [
+        "06",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": [
+        "v_filter"
+      ]
+    },
+    "legacy:407": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "E_ph"
+      ]
+    },
+    "legacy:408": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "E_ph"
+      ]
+    },
+    "legacy:409": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "E_ph"
+      ]
+    },
+    "legacy:410": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:411": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:412": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:413": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:414": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:415": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:416": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:417": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:418": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:419": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:420": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:421": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:422": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "excitation",
+      "quantities": [
+        "lambda"
+      ]
+    },
+    "legacy:423": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "p_ph"
+      ]
+    },
+    "legacy:424": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "p_ph"
+      ]
+    },
+    "legacy:425": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "N_ph"
+      ]
+    },
+    "legacy:426": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "N_ph"
+      ]
+    },
+    "legacy:427": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "E_ges"
+      ]
+    },
+    "legacy:428": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photons",
+      "quantities": [
+        "t"
+      ]
+    },
+    "legacy:429": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "U_G"
+      ]
+    },
+    "legacy:430": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "W_A"
+      ]
+    },
+    "legacy:431": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "W_A"
+      ]
+    },
+    "legacy:432": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "W_A"
+      ]
+    },
+    "legacy:433": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "W_A"
+      ]
+    },
+    "legacy:434": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "W_A"
+      ]
+    },
+    "legacy:435": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "f_G"
+      ]
+    },
+    "legacy:436": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "f_G"
+      ]
+    },
+    "legacy:437": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "lambda_G"
+      ]
+    },
+    "legacy:438": {
+      "topics": [
+        "11",
+        "10",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "theta"
+      ]
+    },
+    "legacy:439": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "delta_x"
+      ]
+    },
+    "legacy:440": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "D_screen"
+      ]
+    },
+    "legacy:441": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "uncertainty",
+      "quantities": [
+        "sigma_p"
+      ]
+    },
+    "legacy:442": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "uncertainty",
+      "quantities": [
+        "sigma_x"
+      ]
+    },
+    "legacy:443": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "uncertainty",
+      "quantities": [
+        "sigma_x"
+      ]
+    },
+    "legacy:444": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "uncertainty",
+      "quantities": [
+        "sigma_v"
+      ]
+    },
+    "legacy:445": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "uncertainty",
+      "quantities": [
+        "sigma_v"
+      ]
+    },
+    "legacy:446": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "fourier",
+      "quantities": [
+        "sigma_f"
+      ]
+    },
+    "legacy:447": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "fourier",
+      "quantities": [
+        "sigma_t"
+      ]
+    },
+    "legacy:448": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "fourier",
+      "quantities": [
+        "df_FWHM"
+      ]
+    },
+    "legacy:449": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "fourier",
+      "quantities": [
+        "dt_FWHM"
+      ]
+    },
+    "legacy:450": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "fourier",
+      "quantities": [
+        "Delta_f"
+      ]
+    },
+    "legacy:451": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "fourier",
+      "quantities": [
+        "Delta_t"
+      ]
+    },
+    "legacy:452": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "Gamma"
+      ]
+    },
+    "legacy:453": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": [
+        "lambda_n"
+      ]
+    },
+    "legacy:454": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": [
+        "p_n"
+      ]
+    },
+    "legacy:455": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": [
+        "E_n"
+      ]
+    },
+    "legacy:456": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": [
+        "E_n"
+      ]
+    },
+    "legacy:457": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "E_n"
+      ]
+    },
+    "legacy:458": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": [
+        "Delta_E"
+      ]
+    },
+    "legacy:459": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "Delta_E"
+      ]
+    },
+    "legacy:460": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "Delta_E"
+      ]
+    },
+    "legacy:461": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": [
+        "lambda_ph"
+      ]
+    },
+    "legacy:462": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "lambda_ph"
+      ]
+    },
+    "legacy:463": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "lambda_ph"
+      ]
+    },
+    "legacy:464": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "E_ion"
+      ]
+    },
+    "legacy:465": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "spectra",
+      "quantities": [
+        "r_n"
+      ]
+    },
+    "legacy:466": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "excitation",
+      "quantities": [
+        "E_anreg"
+      ]
+    },
+    "legacy:467": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "excitation",
+      "quantities": [
+        "Delta_U"
+      ]
+    },
+    "legacy:468": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "xray",
+      "quantities": [
+        "lambda_min"
+      ]
+    },
+    "legacy:469": {
+      "topics": [
+        "11",
+        "12",
+        "abi"
+      ],
+      "group": "compton",
+      "quantities": [
+        "Delta_lambda"
+      ]
+    },
+    "legacy:470": {
+      "topics": [
+        "11",
+        "12",
+        "abi"
+      ],
+      "group": "compton",
+      "quantities": [
+        "lambda_s"
+      ]
+    },
+    "legacy:471": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "quantum",
+      "quantities": [
+        "P_Ort"
+      ]
+    },
+    "legacy:472": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "well",
+      "quantities": [
+        "psi_n"
+      ]
+    },
+    "legacy:473": {
+      "topics": [
+        "12",
+        "abi"
+      ],
+      "group": "atom",
+      "quantities": [
+        "N_Schale"
+      ]
+    },
+    "legacy:474": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "h_P"
+      ]
+    },
+    "legacy:475": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "h_P"
+      ]
+    },
+    "legacy:476": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "omega0"
+      ]
+    },
+    "legacy:477": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "f0"
+      ]
+    },
+    "legacy:478": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:479": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "L"
+      ]
+    },
+    "legacy:480": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "C"
+      ]
+    },
+    "legacy:481": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "Q_charge"
+      ]
+    },
+    "legacy:482": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "I"
+      ]
+    },
+    "legacy:483": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "I0"
+      ]
+    },
+    "legacy:484": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "U_C"
+      ]
+    },
+    "legacy:485": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "Q_charge"
+      ]
+    },
+    "legacy:486": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "E_cap"
+      ]
+    },
+    "legacy:487": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "E_mag"
+      ]
+    },
+    "legacy:488": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "E_ges"
+      ]
+    },
+    "legacy:489": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "I0"
+      ]
+    },
+    "legacy:490": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "lc",
+      "quantities": [
+        "U0"
+      ]
+    },
+    "legacy:491": {
+      "topics": [
+        "09",
+        "07",
+        "04"
+      ],
+      "group": "damping",
+      "quantities": [
+        "P_R"
+      ],
+      "label": "P_R - Verlustleistung im RLC-Kreis"
+    },
+    "legacy:492": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "damping",
+      "quantities": [
+        "Q_quality"
+      ]
+    },
+    "legacy:493": {
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "damping",
+      "quantities": [
+        "Delta_f"
+      ]
+    },
+    "legacy:494": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:495": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "f"
+      ]
+    },
+    "legacy:496": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "omega"
+      ]
+    },
+    "legacy:497": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "x"
+      ]
+    },
+    "legacy:498": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "v"
+      ]
+    },
+    "legacy:499": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "v_max"
+      ]
+    },
+    "legacy:500": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "a"
+      ]
+    },
+    "legacy:501": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "a_max"
+      ]
+    },
+    "legacy:502": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "F_D"
+      ]
+    },
+    "legacy:503": {
+      "topics": [
+        "09",
+        "08"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:504": {
+      "topics": [
+        "09",
+        "08"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "D_spring"
+      ]
+    },
+    "legacy:505": {
+      "topics": [
+        "09",
+        "08"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "m"
+      ]
+    },
+    "legacy:506": {
+      "topics": [
+        "09",
+        "08"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "T"
+      ]
+    },
+    "legacy:507": {
+      "topics": [
+        "09",
+        "08"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "l"
+      ]
+    },
+    "legacy:508": {
+      "topics": [
+        "09",
+        "08"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "g"
+      ]
+    },
+    "legacy:509": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "E_ges"
+      ]
+    },
+    "legacy:510": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "E_sp"
+      ]
+    },
+    "legacy:511": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "E_kin"
+      ]
+    },
+    "legacy:512": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "A_s"
+      ]
+    },
+    "legacy:513": {
+      "topics": [
+        "09"
+      ],
+      "group": "mechanical",
+      "quantities": [
+        "phase"
+      ]
+    },
+    "native:motion": {
+      "topics": [
+        "00",
+        "03"
+      ],
+      "group": "kinematics",
+      "quantities": [
+        "t",
+        "x",
+        "v",
+        "a"
+      ]
+    },
+    "native:projectile": {
+      "topics": [
+        "03",
+        "00"
+      ],
+      "group": "projectile",
+      "quantities": [
+        "t",
+        "x",
+        "v",
+        "alpha",
+        "h_height",
+        "g"
+      ]
+    },
+    "native:braking": {
+      "topics": [
+        "03",
+        "00",
+        "02"
+      ],
+      "group": "projectile",
+      "quantities": [
+        "t",
+        "x",
+        "v",
+        "a",
+        "mu_friction",
+        "F_R"
+      ]
+    },
+    "native:meeting": {
+      "topics": [
+        "00",
+        "03",
+        "02"
+      ],
+      "group": "kinematics",
+      "quantities": [
+        "t",
+        "x",
+        "v",
+        "alpha"
+      ]
+    },
+    "native:energy": {
+      "topics": [
+        "01",
+        "02"
+      ],
+      "group": "energy",
+      "quantities": [
+        "E_kin",
+        "E_pot",
+        "E_sp",
+        "W",
+        "v",
+        "h_height",
+        "P",
+        "F",
+        "D_spring"
+      ]
+    },
+    "native:collision": {
+      "topics": [
+        "01"
+      ],
+      "group": "momentum",
+      "quantities": [
+        "p",
+        "v",
+        "E_kin"
+      ]
+    },
+    "native:incline": {
+      "topics": [
+        "02",
+        "03"
+      ],
+      "group": "forces",
+      "quantities": [
+        "F",
+        "a",
+        "mu_friction",
+        "alpha"
+      ]
+    },
+    "native:circle": {
+      "topics": [
+        "02",
+        "03"
+      ],
+      "group": "circle",
+      "quantities": [
+        "F_r",
+        "a_r",
+        "v",
+        "f",
+        "omega",
+        "T",
+        "r",
+        "alpha"
+      ]
+    },
+    "native:efield": {
+      "topics": [
+        "04",
+        "06",
+        "other"
+      ],
+      "group": "efield",
+      "quantities": [
+        "E_field",
+        "F_el",
+        "Q_charge",
+        "x"
+      ]
+    },
+    "native:capacitor": {
+      "topics": [
+        "04"
+      ],
+      "group": "capacitor",
+      "quantities": [
+        "C",
+        "U",
+        "Q_charge",
+        "E_cap",
+        "plate_gap",
+        "A"
+      ]
+    },
+    "native:rc": {
+      "topics": [
+        "04",
+        "08"
+      ],
+      "group": "rc",
+      "quantities": [
+        "tau",
+        "t",
+        "U",
+        "U_C",
+        "I",
+        "Q_charge",
+        "E_cap"
+      ]
+    },
+    "native:magnetic": {
+      "topics": [
+        "05",
+        "06",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": [
+        "F_L",
+        "B",
+        "I",
+        "v",
+        "Q_charge"
+      ]
+    },
+    "native:coil": {
+      "topics": [
+        "05",
+        "07",
+        "04"
+      ],
+      "group": "magnetic",
+      "quantities": [
+        "B",
+        "H",
+        "I",
+        "L",
+        "R",
+        "rho_el"
+      ]
+    },
+    "native:particles": {
+      "topics": [
+        "06",
+        "04",
+        "05"
+      ],
+      "group": "accelerator",
+      "quantities": [
+        "v",
+        "Q_charge",
+        "m",
+        "B",
+        "f",
+        "E_kin",
+        "q_m"
+      ]
+    },
+    "native:crossfield": {
+      "topics": [
+        "06",
+        "04",
+        "05",
+        "other"
+      ],
+      "group": "particles",
+      "quantities": [
+        "v_filter",
+        "v",
+        "x",
+        "m",
+        "E_field",
+        "B"
+      ]
+    },
+    "native:millikan": {
+      "topics": [
+        "06",
+        "04"
+      ],
+      "group": "millikan",
+      "quantities": [
+        "Q_charge",
+        "m",
+        "U",
+        "measurements",
+        "rho_mass"
+      ]
+    },
+    "native:induction": {
+      "topics": [
+        "07",
+        "05"
+      ],
+      "group": "induction",
+      "quantities": [
+        "U_ind",
+        "Phi",
+        "B",
+        "L",
+        "t"
+      ]
+    },
+    "native:rltrafo": {
+      "topics": [
+        "07",
+        "08"
+      ],
+      "group": "transformer",
+      "quantities": [
+        "tau",
+        "t",
+        "I",
+        "U",
+        "L",
+        "P"
+      ]
+    },
+    "native:huygens": {
+      "topics": [
+        "10",
+        "abi"
+      ],
+      "group": "waves",
+      "quantities": [
+        "alpha",
+        "n_optical",
+        "lambda"
+      ]
+    },
+    "native:grating": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "lambda",
+        "alpha",
+        "D_screen",
+        "delta_x",
+        "k_order",
+        "slit_gap"
+      ]
+    },
+    "native:standing": {
+      "topics": [
+        "10",
+        "09",
+        "abi"
+      ],
+      "group": "waves",
+      "quantities": [
+        "f",
+        "lambda",
+        "l"
+      ]
+    },
+    "native:polarization": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "polarization",
+      "quantities": [
+        "I_light",
+        "alpha",
+        "n_optical"
+      ]
+    },
+    "native:film": {
+      "topics": [
+        "10",
+        "abi"
+      ],
+      "group": "film",
+      "quantities": [
+        "lambda",
+        "x",
+        "n_optical",
+        "phase"
+      ]
+    },
+    "native:resolution": {
+      "topics": [
+        "10",
+        "11",
+        "abi"
+      ],
+      "group": "diffraction",
+      "quantities": [
+        "lambda",
+        "alpha",
+        "x",
+        "k_order"
+      ]
+    },
+    "native:diagram": {
+      "topics": [
+        "08",
+        "00",
+        "07"
+      ],
+      "group": "measurement",
+      "quantities": [
+        "measurements",
+        "t",
+        "W",
+        "p",
+        "U_ind"
+      ]
+    },
+    "native:fit": {
+      "topics": [
+        "08",
+        "04",
+        "05",
+        "09"
+      ],
+      "group": "measurement",
+      "quantities": [
+        "measurements"
+      ]
+    },
+    "native:planckfit": {
+      "topics": [
+        "11",
+        "abi"
+      ],
+      "group": "photoelectric",
+      "quantities": [
+        "measurements",
+        "h_P",
+        "W_A",
+        "lambda_G",
+        "f_G",
+        "f",
+        "E_kin"
+      ]
+    },
+    "native:ac": {
+      "topics": [
+        "07",
+        "09"
+      ],
+      "group": "ac",
+      "quantities": [
+        "I_eff",
+        "U_eff",
+        "P",
+        "Q_blind",
+        "S",
+        "phase",
+        "f",
+        "X_L",
+        "X_C",
+        "Z"
+      ]
+    },
+    "native:damping": {
+      "label": "Mechanische und elektrische Daempfung und Resonanz",
+      "topics": [
+        "09",
+        "07"
+      ],
+      "group": "damping",
+      "quantities": [
+        "f",
+        "phase",
+        "t",
+        "E_ges",
+        "Q_quality",
+        "Delta_f"
+      ]
+    },
+    "native:simulation": {
+      "topics": [
+        "08",
+        "00",
+        "02",
+        "03",
+        "04",
+        "07",
+        "09"
+      ],
+      "group": "simulation",
+      "quantities": [
+        "measurements",
+        "t",
+        "v",
+        "F"
+      ]
+    },
+    "native:relativity": {
+      "topics": [
+        "11",
+        "06",
+        "abi"
+      ],
+      "group": "matter",
+      "quantities": [
+        "lambda",
+        "v",
+        "U",
+        "E_kin"
+      ]
+    },
+    "native:moseley": {
+      "topics": [
+        "12",
+        "11",
+        "abi"
+      ],
+      "group": "xray",
+      "quantities": [
+        "lambda",
+        "lambda_min",
+        "U",
+        "alpha",
+        "measurements",
+        "h_P",
+        "crystal_gap"
+      ]
+    }
+  }
+}

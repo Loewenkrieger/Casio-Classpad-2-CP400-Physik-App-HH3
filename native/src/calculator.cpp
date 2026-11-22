@@ -58,18 +58,23 @@ bool parseNumber(std::string value,double scale,double& result,std::string& erro
   return true;
 }
 std::string formatNumber(double value){
+  return formatNumber(value,6);
+}
+std::string formatNumber(double value,unsigned significantDigits){
   if(!std::isfinite(value))return "[Zahlenbereich ueberschritten]";
   if(value==0)return "0";
+  significantDigits=std::clamp(significantDigits,1u,15u);
   const bool negative=value<0;double scaled=std::abs(value);int exponent=0;
   // Normalize in bounded steps, including subnormal values, without printf/newlib.
   while(scaled>=1e100){scaled/=1e100;exponent+=100;}
   while(scaled>=10){scaled/=10;++exponent;}
   while(scaled<1e-99){scaled*=1e100;exponent-=100;}
   while(scaled<1){scaled*=10;--exponent;}
-  uint32_t significant=static_cast<uint32_t>(std::floor(scaled*1e5+.5));
-  if(significant>=1000000){significant/=10;++exponent;}
-  std::string digits=std::to_string(significant);while(digits.size()<6)digits="0"+digits;
-  const bool scientific=exponent< -4||exponent>=6;
+  uint64_t limit=1;for(unsigned i=0;i<significantDigits;++i)limit*=10;
+  uint64_t significant=static_cast<uint64_t>(std::floor(scaled*static_cast<double>(limit/10)+.5));
+  if(significant>=limit){significant/=10;++exponent;}
+  std::string digits=std::to_string(significant);while(digits.size()<significantDigits)digits="0"+digits;
+  const bool scientific=exponent< -4||exponent>=static_cast<int>(significantDigits);
   const int point=scientific?1:exponent+1;
   std::string result=point<=0?"0."+std::string(-point,'0')+digits:digits.substr(0,point)+"."+digits.substr(point);
   while(result.back()=='0')result.pop_back();

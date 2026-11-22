@@ -15,6 +15,7 @@ bool calculationRecord(const Value& value,Calculation& result,std::string& error
 std::vector<Unit> unitOptions(const std::string& unit);
 bool parseNumber(std::string text,double scale,double& result,std::string& error);
 std::string formatNumber(double value);
+std::string formatNumber(double value,unsigned significantDigits);
 std::string resultText(const std::string& name,double value,const std::string& unit);
 bool calculate(const Calculation& calculation,const std::vector<double>& values,double& result,std::string& error);
 bool fitPlanck(const std::vector<std::pair<double,double>>& points,bool wavelength,Fit& result,std::string& error);

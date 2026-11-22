@@ -10,6 +10,7 @@ native/**/*.inc text eol=lf
 native/**/*.h text eol=lf
 native/**/*.def text eol=lf
 native/**/*.ps1 text eol=lf
+native/sources/*.json text eol=lf
 native/Makefile text eol=lf
 native/vendor/** -text -whitespace
 native/licenses/** -text -whitespace
